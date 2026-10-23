@@ -1,0 +1,22 @@
+cmake_minimum_required(VERSION 3.20)
+project(asio_csp_tests LANGUAGES CXX)
+find_package(Threads REQUIRED)
+include(CTest)
+foreach(name arbitration select lifetime completion_executor ready_path pending_path immediate_path awaitable_path reusable_path finalize_withdraw_race coroutine_tuple_lifetime upstream_control upstream_probe)
+  add_executable(${name} tests/${name}.cpp)
+  target_compile_features(${name} PRIVATE cxx_std_20)
+  if(name STREQUAL "coroutine_tuple_lifetime")
+    target_compile_definitions(${name} PRIVATE NAMED_TUPLE_STORAGE)
+  endif()
+  target_compile_definitions(${name} PRIVATE ASIO_STANDALONE)
+  target_include_directories(${name} PRIVATE ../asio/include)
+  target_link_libraries(${name} PRIVATE Threads::Threads)
+  # Optimized GCC coroutine builds can warn in upstream Asio and in the
+  # allocation-counting controls. Keep warnings visible in every build;
+  # require warning-free Debug builds, matching the CI configuration.
+  target_compile_options(${name} PRIVATE -Wall -Wextra $<$<CONFIG:Debug>:-Werror> -UNDEBUG)
+  add_test(NAME ${name} COMMAND ${name})
+  set_tests_properties(${name} PROPERTIES TIMEOUT 60)
+endforeach()
+add_test(NAME upstream_preservation_red COMMAND upstream_control --require-preservation)
+set_tests_properties(upstream_preservation_red PROPERTIES WILL_FAIL TRUE)
