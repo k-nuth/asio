@@ -1,0 +1,56 @@
+name: Channel selection controls
+on:
+  pull_request:
+    branches: ['1.38.3']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  gcc:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5, Node 24
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Compiler and exact baseline
+        run: |
+          g++ --version
+          git fetch --no-tags origin 227bfbc08d151f45fec9313883e6da6b53683396
+      - name: Original completion failure on GCC
+        run: |
+          mkdir -p /tmp/asio-original/asio/experimental
+          git show 227bfbc08d151f45fec9313883e6da6b53683396:include/asio/experimental/channel_select.hpp > /tmp/asio-original/asio/experimental/channel_select.hpp
+          g++ -std=c++20 -pthread -DASIO_STANDALONE -I/tmp/asio-original -Iinclude csp/tests/completion_executor.cpp -o /tmp/asio-original/completion
+          set +e
+          /tmp/asio-original/completion > /tmp/asio-original/result.log 2>&1
+          result=$?
+          set -e
+          cat /tmp/asio-original/result.log
+          test "$result" = 2
+          grep -F 'bad executor' /tmp/asio-original/result.log
+      - name: Current behavioral controls
+        run: |
+          cmake -S csp -B build-csp -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_COMPILER=g++
+          cmake --build build-csp --parallel 2
+          # The retained upstream timer scheduling probe characterizes macOS.
+          ctest --test-dir build-csp --output-on-failure -E upstream_probe
+          CXX=g++ python3 csp/tests/lifetime_control.py /tmp/asio-lifetime-control
+          CXX=g++ python3 csp/tests/mutation_control.py /tmp/asio-mutation-control
+          CXX=g++ python3 csp/tests/performance_control.py /tmp/asio-performance-control
+          CXX=g++ python3 csp/tests/coroutine_tuple_control.py /tmp/asio-coroutine-tuple-control
+      - name: Reused owning-case benchmark controls
+        run: |
+          g++ -std=c++20 -O3 -DNDEBUG -DASIO_STANDALONE -DASIO_BENCH_REUSE_CASES -pthread -Iinclude csp/bench/select.cpp -o build-csp/bench-reuse
+          build-csp/bench-reuse ready 3000 1 1
+          build-csp/bench-reuse mixed 3000 1 1
+          build-csp/bench-reuse fanin 3000 0 4
+          build-csp/bench-reuse fanin 3000 64 4
+      - name: Preserve negative and positive observations
+        if: always()
+        run: |
+          for file in /tmp/asio-original/result.log /tmp/asio-lifetime-control/baseline.log /tmp/asio-lifetime-control/fixed.log /tmp/asio-mutation-control/mutation*.log /tmp/asio-performance-control/*.log /tmp/asio-coroutine-tuple-control/*.log; do
+            if test -f "$file"; then cat "$file"; fi
+          done

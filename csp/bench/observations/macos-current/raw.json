@@ -1,0 +1,6400 @@
+[
+  {
+    "engine": "tokio",
+    "mode": "mixed",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 871667,
+    "ns_per_message": 29.055566666666667,
+    "counts": [
+      10152,
+      9999,
+      9849
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "tokio",
+      "mixed",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "ready",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 2722834,
+    "ns_per_message": 90.76113333333333,
+    "counts": [
+      10140,
+      9948,
+      9912
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-reuse-bench",
+      "ready",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "mixed",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 2560375,
+    "ns_per_message": 85.34583333333333,
+    "counts": [
+      10055,
+      10049,
+      9896
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-reuse-bench",
+      "mixed",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-baseline",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 4,
+    "n": 30000,
+    "ns": 444860833,
+    "ns_per_message": 4942.898144444444,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-baseline-bench",
+      "fanin",
+      "30000",
+      "1",
+      "4"
+    ]
+  },
+  {
+    "engine": "asio-baseline",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 4,
+    "n": 30000,
+    "ns": 445869125,
+    "ns_per_message": 4954.101388888889,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-baseline-bench",
+      "fanin",
+      "30000",
+      "1",
+      "4"
+    ]
+  },
+  {
+    "engine": "crossbeam",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 4,
+    "n": 30000,
+    "ns": 123966500,
+    "ns_per_message": 1377.4055555555556,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "crossbeam",
+      "fanin",
+      "30000",
+      "0",
+      "4"
+    ]
+  },
+  {
+    "engine": "asio",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 4,
+    "n": 30000,
+    "ns": 208721542,
+    "ns_per_message": 2319.1282444444446,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-bench",
+      "fanin",
+      "30000",
+      "0",
+      "4"
+    ]
+  },
+  {
+    "engine": "asio-baseline",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 1,
+    "n": 30000,
+    "ns": 2023479000,
+    "ns_per_message": 22483.1,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-baseline-bench",
+      "fanin",
+      "30000",
+      "64",
+      "1"
+    ]
+  },
+  {
+    "engine": "tokio",
+    "mode": "ready",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 665250,
+    "ns_per_message": 22.175,
+    "counts": [
+      9944,
+      10032,
+      10024
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "tokio",
+      "ready",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-baseline",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 4,
+    "n": 30000,
+    "ns": 438957417,
+    "ns_per_message": 4877.304633333333,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-baseline-bench",
+      "fanin",
+      "30000",
+      "64",
+      "4"
+    ]
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 4,
+    "n": 30000,
+    "ns": 207737334,
+    "ns_per_message": 2308.1926,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-reuse-bench",
+      "fanin",
+      "30000",
+      "0",
+      "4"
+    ]
+  },
+  {
+    "engine": "go",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 4,
+    "n": 30000,
+    "ns": 17246917,
+    "ns_per_message": 191.6324111111111,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/go-bench",
+      "fanin",
+      "30000",
+      "0",
+      "4"
+    ]
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 4,
+    "n": 30000,
+    "ns": 101878000,
+    "ns_per_message": 1131.9777777777779,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-reuse-bench",
+      "fanin",
+      "30000",
+      "1",
+      "4"
+    ]
+  },
+  {
+    "engine": "asio",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 4,
+    "n": 30000,
+    "ns": 101516917,
+    "ns_per_message": 1127.9657444444445,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-bench",
+      "fanin",
+      "30000",
+      "1",
+      "4"
+    ]
+  },
+  {
+    "engine": "go",
+    "mode": "ready",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 1248250,
+    "ns_per_message": 41.608333333333334,
+    "counts": [
+      9781,
+      9977,
+      10242
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/go-bench",
+      "ready",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "crossbeam",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 4,
+    "n": 30000,
+    "ns": 125358208,
+    "ns_per_message": 1392.8689777777777,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "crossbeam",
+      "fanin",
+      "30000",
+      "0",
+      "4"
+    ]
+  },
+  {
+    "engine": "asio",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 1,
+    "n": 30000,
+    "ns": 49248709,
+    "ns_per_message": 547.2078777777778,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-bench",
+      "fanin",
+      "30000",
+      "0",
+      "1"
+    ]
+  },
+  {
+    "engine": "go",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 4,
+    "n": 30000,
+    "ns": 11048166,
+    "ns_per_message": 122.7574,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/go-bench",
+      "fanin",
+      "30000",
+      "64",
+      "4"
+    ]
+  },
+  {
+    "engine": "tokio",
+    "mode": "mixed",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 667708,
+    "ns_per_message": 22.256933333333333,
+    "counts": [
+      10017,
+      10053,
+      9930
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "tokio",
+      "mixed",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "go",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 7473916,
+    "ns_per_message": 83.04351111111112,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/go-bench",
+      "fanin",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 1,
+    "n": 30000,
+    "ns": 10691292,
+    "ns_per_message": 118.79213333333334,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-reuse-bench",
+      "fanin",
+      "30000",
+      "64",
+      "1"
+    ]
+  },
+  {
+    "engine": "tokio",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 6388750,
+    "ns_per_message": 70.98611111111111,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "tokio",
+      "fanin",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio",
+    "mode": "mixed",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 2244167,
+    "ns_per_message": 74.80556666666666,
+    "counts": [
+      10066,
+      10044,
+      9890
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-bench",
+      "mixed",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 1,
+    "n": 30000,
+    "ns": 49474209,
+    "ns_per_message": 549.7134333333333,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-reuse-bench",
+      "fanin",
+      "30000",
+      "0",
+      "1"
+    ]
+  },
+  {
+    "engine": "crossbeam",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 4,
+    "n": 30000,
+    "ns": 11904791,
+    "ns_per_message": 132.27545555555557,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "crossbeam",
+      "fanin",
+      "30000",
+      "1",
+      "4"
+    ]
+  },
+  {
+    "engine": "asio-baseline",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 1,
+    "n": 30000,
+    "ns": 2023310791,
+    "ns_per_message": 22481.23101111111,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-baseline-bench",
+      "fanin",
+      "30000",
+      "64",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 4,
+    "n": 30000,
+    "ns": 35489917,
+    "ns_per_message": 394.3324111111111,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-reuse-bench",
+      "fanin",
+      "30000",
+      "64",
+      "4"
+    ]
+  },
+  {
+    "engine": "tokio",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 1,
+    "n": 30000,
+    "ns": 2560542,
+    "ns_per_message": 28.450466666666667,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "tokio",
+      "fanin",
+      "30000",
+      "64",
+      "1"
+    ]
+  },
+  {
+    "engine": "go",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 7379375,
+    "ns_per_message": 81.99305555555556,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/go-bench",
+      "fanin",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "ready",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 2249334,
+    "ns_per_message": 74.9778,
+    "counts": [
+      9883,
+      10053,
+      10064
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-reuse-bench",
+      "ready",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "crossbeam",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 4,
+    "n": 30000,
+    "ns": 4865416,
+    "ns_per_message": 54.06017777777778,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "crossbeam",
+      "fanin",
+      "30000",
+      "64",
+      "4"
+    ]
+  },
+  {
+    "engine": "go",
+    "mode": "mixed",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 1156208,
+    "ns_per_message": 38.54026666666667,
+    "counts": [
+      10093,
+      9870,
+      10037
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/go-bench",
+      "mixed",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-baseline",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 2018432500,
+    "ns_per_message": 22427.027777777777,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-baseline-bench",
+      "fanin",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "tokio",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 4,
+    "n": 30000,
+    "ns": 5806291,
+    "ns_per_message": 64.51434444444445,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "tokio",
+      "fanin",
+      "30000",
+      "64",
+      "4"
+    ]
+  },
+  {
+    "engine": "tokio",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 4,
+    "n": 30000,
+    "ns": 23516417,
+    "ns_per_message": 261.29352222222224,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "tokio",
+      "fanin",
+      "30000",
+      "1",
+      "4"
+    ]
+  },
+  {
+    "engine": "go",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 1,
+    "n": 30000,
+    "ns": 3972666,
+    "ns_per_message": 44.14073333333333,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/go-bench",
+      "fanin",
+      "30000",
+      "64",
+      "1"
+    ]
+  },
+  {
+    "engine": "go",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 4,
+    "n": 30000,
+    "ns": 14314375,
+    "ns_per_message": 159.04861111111111,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/go-bench",
+      "fanin",
+      "30000",
+      "1",
+      "4"
+    ]
+  },
+  {
+    "engine": "asio-baseline",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 4,
+    "n": 30000,
+    "ns": 442418292,
+    "ns_per_message": 4915.7588,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-baseline-bench",
+      "fanin",
+      "30000",
+      "64",
+      "4"
+    ]
+  },
+  {
+    "engine": "asio-baseline",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 4,
+    "n": 30000,
+    "ns": 513370834,
+    "ns_per_message": 5704.120377777778,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-baseline-bench",
+      "fanin",
+      "30000",
+      "0",
+      "4"
+    ]
+  },
+  {
+    "engine": "asio-baseline",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 1,
+    "n": 30000,
+    "ns": 2019589708,
+    "ns_per_message": 22439.885644444443,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-baseline-bench",
+      "fanin",
+      "30000",
+      "64",
+      "1"
+    ]
+  },
+  {
+    "engine": "go",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 1,
+    "n": 30000,
+    "ns": 3931666,
+    "ns_per_message": 43.68517777777778,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/go-bench",
+      "fanin",
+      "30000",
+      "64",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "ready",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 2243500,
+    "ns_per_message": 74.78333333333333,
+    "counts": [
+      10092,
+      9918,
+      9990
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-reuse-bench",
+      "ready",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 1,
+    "n": 30000,
+    "ns": 10460000,
+    "ns_per_message": 116.22222222222223,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-reuse-bench",
+      "fanin",
+      "30000",
+      "64",
+      "1"
+    ]
+  },
+  {
+    "engine": "crossbeam",
+    "mode": "mixed",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 632583,
+    "ns_per_message": 21.0861,
+    "counts": [
+      10074,
+      9928,
+      9998
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "crossbeam",
+      "mixed",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 1,
+    "n": 30000,
+    "ns": 48548125,
+    "ns_per_message": 539.4236111111111,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-bench",
+      "fanin",
+      "30000",
+      "0",
+      "1"
+    ]
+  },
+  {
+    "engine": "go",
+    "mode": "mixed",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 1176083,
+    "ns_per_message": 39.20276666666667,
+    "counts": [
+      10013,
+      9984,
+      10003
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/go-bench",
+      "mixed",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 1,
+    "n": 30000,
+    "ns": 10664084,
+    "ns_per_message": 118.48982222222222,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-bench",
+      "fanin",
+      "30000",
+      "64",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "mixed",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 2275459,
+    "ns_per_message": 75.84863333333334,
+    "counts": [
+      10053,
+      9921,
+      10026
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-reuse-bench",
+      "mixed",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "crossbeam",
+    "mode": "mixed",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 638875,
+    "ns_per_message": 21.295833333333334,
+    "counts": [
+      10074,
+      9928,
+      9998
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "crossbeam",
+      "mixed",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-baseline",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 4,
+    "n": 30000,
+    "ns": 514262625,
+    "ns_per_message": 5714.029166666666,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-baseline-bench",
+      "fanin",
+      "30000",
+      "0",
+      "4"
+    ]
+  },
+  {
+    "engine": "asio",
+    "mode": "ready",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 2234666,
+    "ns_per_message": 74.48886666666667,
+    "counts": [
+      9961,
+      9967,
+      10072
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-bench",
+      "ready",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 4,
+    "n": 30000,
+    "ns": 104596041,
+    "ns_per_message": 1162.1782333333333,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-reuse-bench",
+      "fanin",
+      "30000",
+      "1",
+      "4"
+    ]
+  },
+  {
+    "engine": "go",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 7513375,
+    "ns_per_message": 83.48194444444445,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/go-bench",
+      "fanin",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "crossbeam",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 4,
+    "n": 30000,
+    "ns": 125197083,
+    "ns_per_message": 1391.0787,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "crossbeam",
+      "fanin",
+      "30000",
+      "0",
+      "4"
+    ]
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "mixed",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 2305958,
+    "ns_per_message": 76.86526666666667,
+    "counts": [
+      9923,
+      9999,
+      10078
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-reuse-bench",
+      "mixed",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-baseline",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 4,
+    "n": 30000,
+    "ns": 507419875,
+    "ns_per_message": 5637.998611111111,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-baseline-bench",
+      "fanin",
+      "30000",
+      "0",
+      "4"
+    ]
+  },
+  {
+    "engine": "asio",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 1,
+    "n": 30000,
+    "ns": 10569125,
+    "ns_per_message": 117.43472222222222,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-bench",
+      "fanin",
+      "30000",
+      "64",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 32579917,
+    "ns_per_message": 361.99907777777776,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-reuse-bench",
+      "fanin",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "tokio",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 4,
+    "n": 30000,
+    "ns": 23560333,
+    "ns_per_message": 261.78147777777775,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "tokio",
+      "fanin",
+      "30000",
+      "1",
+      "4"
+    ]
+  },
+  {
+    "engine": "go",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 4,
+    "n": 30000,
+    "ns": 10382500,
+    "ns_per_message": 115.36111111111111,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/go-bench",
+      "fanin",
+      "30000",
+      "64",
+      "4"
+    ]
+  },
+  {
+    "engine": "asio-baseline",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 2020042291,
+    "ns_per_message": 22444.914344444445,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-baseline-bench",
+      "fanin",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-baseline",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 4,
+    "n": 30000,
+    "ns": 436168583,
+    "ns_per_message": 4846.317588888889,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-baseline-bench",
+      "fanin",
+      "30000",
+      "64",
+      "4"
+    ]
+  },
+  {
+    "engine": "tokio",
+    "mode": "mixed",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 666125,
+    "ns_per_message": 22.204166666666666,
+    "counts": [
+      10094,
+      10000,
+      9906
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "tokio",
+      "mixed",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 1,
+    "n": 30000,
+    "ns": 48408375,
+    "ns_per_message": 537.8708333333333,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-bench",
+      "fanin",
+      "30000",
+      "0",
+      "1"
+    ]
+  },
+  {
+    "engine": "crossbeam",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 4,
+    "n": 30000,
+    "ns": 21514416,
+    "ns_per_message": 239.04906666666668,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "crossbeam",
+      "fanin",
+      "30000",
+      "1",
+      "4"
+    ]
+  },
+  {
+    "engine": "asio-baseline",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 1,
+    "n": 30000,
+    "ns": 2011513708,
+    "ns_per_message": 22350.152311111113,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-baseline-bench",
+      "fanin",
+      "30000",
+      "0",
+      "1"
+    ]
+  },
+  {
+    "engine": "tokio",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 1,
+    "n": 30000,
+    "ns": 2592083,
+    "ns_per_message": 28.800922222222223,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "tokio",
+      "fanin",
+      "30000",
+      "64",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-baseline",
+    "mode": "ready",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 663154500,
+    "ns_per_message": 22105.15,
+    "counts": [
+      10024,
+      10093,
+      9883
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-baseline-bench",
+      "ready",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "crossbeam",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 4,
+    "n": 30000,
+    "ns": 27777291,
+    "ns_per_message": 308.6365666666667,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "crossbeam",
+      "fanin",
+      "30000",
+      "1",
+      "4"
+    ]
+  },
+  {
+    "engine": "go",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 1,
+    "n": 30000,
+    "ns": 9219125,
+    "ns_per_message": 102.43472222222222,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/go-bench",
+      "fanin",
+      "30000",
+      "0",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 4,
+    "n": 30000,
+    "ns": 208516667,
+    "ns_per_message": 2316.8518555555556,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-bench",
+      "fanin",
+      "30000",
+      "0",
+      "4"
+    ]
+  },
+  {
+    "engine": "go",
+    "mode": "ready",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 1206167,
+    "ns_per_message": 40.20556666666667,
+    "counts": [
+      10085,
+      9898,
+      10017
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/go-bench",
+      "ready",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 4,
+    "n": 30000,
+    "ns": 34907959,
+    "ns_per_message": 387.8662111111111,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-reuse-bench",
+      "fanin",
+      "30000",
+      "64",
+      "4"
+    ]
+  },
+  {
+    "engine": "asio-baseline",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 4,
+    "n": 30000,
+    "ns": 514707583,
+    "ns_per_message": 5718.973144444444,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-baseline-bench",
+      "fanin",
+      "30000",
+      "0",
+      "4"
+    ]
+  },
+  {
+    "engine": "asio-baseline",
+    "mode": "mixed",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 668346333,
+    "ns_per_message": 22278.2111,
+    "counts": [
+      9964,
+      10078,
+      9958
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-baseline-bench",
+      "mixed",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-baseline",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 1,
+    "n": 30000,
+    "ns": 2123459000,
+    "ns_per_message": 23593.98888888889,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-baseline-bench",
+      "fanin",
+      "30000",
+      "0",
+      "1"
+    ]
+  },
+  {
+    "engine": "crossbeam",
+    "mode": "ready",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 603208,
+    "ns_per_message": 20.106933333333334,
+    "counts": [
+      10074,
+      9928,
+      9998
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "crossbeam",
+      "ready",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "crossbeam",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 4,
+    "n": 30000,
+    "ns": 12848250,
+    "ns_per_message": 142.75833333333333,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "crossbeam",
+      "fanin",
+      "30000",
+      "1",
+      "4"
+    ]
+  },
+  {
+    "engine": "crossbeam",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 4,
+    "n": 30000,
+    "ns": 10813083,
+    "ns_per_message": 120.14536666666666,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "crossbeam",
+      "fanin",
+      "30000",
+      "1",
+      "4"
+    ]
+  },
+  {
+    "engine": "go",
+    "mode": "ready",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 1245750,
+    "ns_per_message": 41.525,
+    "counts": [
+      9930,
+      10161,
+      9909
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/go-bench",
+      "ready",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-baseline",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 4,
+    "n": 30000,
+    "ns": 446951000,
+    "ns_per_message": 4966.122222222222,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-baseline-bench",
+      "fanin",
+      "30000",
+      "1",
+      "4"
+    ]
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 32876167,
+    "ns_per_message": 365.29074444444444,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-reuse-bench",
+      "fanin",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "crossbeam",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 4,
+    "n": 30000,
+    "ns": 125835709,
+    "ns_per_message": 1398.1745444444443,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "crossbeam",
+      "fanin",
+      "30000",
+      "0",
+      "4"
+    ]
+  },
+  {
+    "engine": "asio",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 4,
+    "n": 30000,
+    "ns": 105271000,
+    "ns_per_message": 1169.6777777777777,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-bench",
+      "fanin",
+      "30000",
+      "1",
+      "4"
+    ]
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 1,
+    "n": 30000,
+    "ns": 10860625,
+    "ns_per_message": 120.67361111111111,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-reuse-bench",
+      "fanin",
+      "30000",
+      "64",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 4,
+    "n": 30000,
+    "ns": 103137291,
+    "ns_per_message": 1145.9699,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-bench",
+      "fanin",
+      "30000",
+      "1",
+      "4"
+    ]
+  },
+  {
+    "engine": "asio",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 32572792,
+    "ns_per_message": 361.9199111111111,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-bench",
+      "fanin",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 1,
+    "n": 30000,
+    "ns": 49075041,
+    "ns_per_message": 545.2782333333333,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-reuse-bench",
+      "fanin",
+      "30000",
+      "0",
+      "1"
+    ]
+  },
+  {
+    "engine": "crossbeam",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 4,
+    "n": 30000,
+    "ns": 4853750,
+    "ns_per_message": 53.93055555555556,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "crossbeam",
+      "fanin",
+      "30000",
+      "64",
+      "4"
+    ]
+  },
+  {
+    "engine": "asio-baseline",
+    "mode": "mixed",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 668878333,
+    "ns_per_message": 22295.944433333334,
+    "counts": [
+      9983,
+      9990,
+      10027
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-baseline-bench",
+      "mixed",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "crossbeam",
+    "mode": "ready",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 595625,
+    "ns_per_message": 19.854166666666668,
+    "counts": [
+      10074,
+      9928,
+      9998
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "crossbeam",
+      "ready",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "crossbeam",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 4,
+    "n": 30000,
+    "ns": 4771125,
+    "ns_per_message": 53.0125,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "crossbeam",
+      "fanin",
+      "30000",
+      "64",
+      "4"
+    ]
+  },
+  {
+    "engine": "tokio",
+    "mode": "mixed",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 658333,
+    "ns_per_message": 21.944433333333333,
+    "counts": [
+      9784,
+      10150,
+      10066
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "tokio",
+      "mixed",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-baseline",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 4,
+    "n": 30000,
+    "ns": 513849334,
+    "ns_per_message": 5709.437044444445,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-baseline-bench",
+      "fanin",
+      "30000",
+      "0",
+      "4"
+    ]
+  },
+  {
+    "engine": "asio",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 4,
+    "n": 30000,
+    "ns": 208146500,
+    "ns_per_message": 2312.738888888889,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-bench",
+      "fanin",
+      "30000",
+      "0",
+      "4"
+    ]
+  },
+  {
+    "engine": "go",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 1,
+    "n": 30000,
+    "ns": 9353791,
+    "ns_per_message": 103.9310111111111,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/go-bench",
+      "fanin",
+      "30000",
+      "0",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 1,
+    "n": 30000,
+    "ns": 10848083,
+    "ns_per_message": 120.53425555555556,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-reuse-bench",
+      "fanin",
+      "30000",
+      "64",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-baseline",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 1,
+    "n": 30000,
+    "ns": 2009961875,
+    "ns_per_message": 22332.909722222223,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-baseline-bench",
+      "fanin",
+      "30000",
+      "0",
+      "1"
+    ]
+  },
+  {
+    "engine": "go",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 1,
+    "n": 30000,
+    "ns": 9115208,
+    "ns_per_message": 101.28008888888888,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/go-bench",
+      "fanin",
+      "30000",
+      "0",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-baseline",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 1,
+    "n": 30000,
+    "ns": 1995036791,
+    "ns_per_message": 22167.075455555554,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-baseline-bench",
+      "fanin",
+      "30000",
+      "0",
+      "1"
+    ]
+  },
+  {
+    "engine": "tokio",
+    "mode": "ready",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 637917,
+    "ns_per_message": 21.2639,
+    "counts": [
+      10036,
+      9924,
+      10040
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "tokio",
+      "ready",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "ready",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 2206625,
+    "ns_per_message": 73.55416666666666,
+    "counts": [
+      9969,
+      10139,
+      9892
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-reuse-bench",
+      "ready",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "tokio",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 1,
+    "n": 30000,
+    "ns": 2663166,
+    "ns_per_message": 29.590733333333333,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "tokio",
+      "fanin",
+      "30000",
+      "64",
+      "1"
+    ]
+  },
+  {
+    "engine": "go",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 4,
+    "n": 30000,
+    "ns": 17301459,
+    "ns_per_message": 192.23843333333335,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/go-bench",
+      "fanin",
+      "30000",
+      "0",
+      "4"
+    ]
+  },
+  {
+    "engine": "asio-baseline",
+    "mode": "ready",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 661668000,
+    "ns_per_message": 22055.6,
+    "counts": [
+      10090,
+      9952,
+      9958
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-baseline-bench",
+      "ready",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "tokio",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 4,
+    "n": 30000,
+    "ns": 6063084,
+    "ns_per_message": 67.3676,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "tokio",
+      "fanin",
+      "30000",
+      "64",
+      "4"
+    ]
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "ready",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 2220084,
+    "ns_per_message": 74.0028,
+    "counts": [
+      10007,
+      10036,
+      9957
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-reuse-bench",
+      "ready",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "go",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 1,
+    "n": 30000,
+    "ns": 3840666,
+    "ns_per_message": 42.67406666666667,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/go-bench",
+      "fanin",
+      "30000",
+      "64",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 4,
+    "n": 30000,
+    "ns": 36937166,
+    "ns_per_message": 410.4129555555556,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-bench",
+      "fanin",
+      "30000",
+      "64",
+      "4"
+    ]
+  },
+  {
+    "engine": "tokio",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 6396500,
+    "ns_per_message": 71.07222222222222,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "tokio",
+      "fanin",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "tokio",
+    "mode": "ready",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 642250,
+    "ns_per_message": 21.408333333333335,
+    "counts": [
+      9975,
+      9989,
+      10036
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "tokio",
+      "ready",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio",
+    "mode": "mixed",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 2283667,
+    "ns_per_message": 76.12223333333333,
+    "counts": [
+      10008,
+      9947,
+      10045
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-bench",
+      "mixed",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "tokio",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 1,
+    "n": 30000,
+    "ns": 2704292,
+    "ns_per_message": 30.04768888888889,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "tokio",
+      "fanin",
+      "30000",
+      "64",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 1,
+    "n": 30000,
+    "ns": 49019542,
+    "ns_per_message": 544.6615777777778,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-reuse-bench",
+      "fanin",
+      "30000",
+      "0",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 1,
+    "n": 30000,
+    "ns": 48753375,
+    "ns_per_message": 541.7041666666667,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-reuse-bench",
+      "fanin",
+      "30000",
+      "0",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 4,
+    "n": 30000,
+    "ns": 205384292,
+    "ns_per_message": 2282.047688888889,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-bench",
+      "fanin",
+      "30000",
+      "0",
+      "4"
+    ]
+  },
+  {
+    "engine": "tokio",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 1,
+    "n": 30000,
+    "ns": 2635042,
+    "ns_per_message": 29.278244444444443,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "tokio",
+      "fanin",
+      "30000",
+      "64",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 4,
+    "n": 30000,
+    "ns": 101454583,
+    "ns_per_message": 1127.2731444444444,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-reuse-bench",
+      "fanin",
+      "30000",
+      "1",
+      "4"
+    ]
+  },
+  {
+    "engine": "asio",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 1,
+    "n": 30000,
+    "ns": 48920666,
+    "ns_per_message": 543.5629555555555,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-bench",
+      "fanin",
+      "30000",
+      "0",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-baseline",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 1,
+    "n": 30000,
+    "ns": 2013091625,
+    "ns_per_message": 22367.68472222222,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-baseline-bench",
+      "fanin",
+      "30000",
+      "64",
+      "1"
+    ]
+  },
+  {
+    "engine": "go",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 4,
+    "n": 30000,
+    "ns": 17285542,
+    "ns_per_message": 192.06157777777779,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/go-bench",
+      "fanin",
+      "30000",
+      "0",
+      "4"
+    ]
+  },
+  {
+    "engine": "tokio",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 4,
+    "n": 30000,
+    "ns": 23805458,
+    "ns_per_message": 264.5050888888889,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "tokio",
+      "fanin",
+      "30000",
+      "1",
+      "4"
+    ]
+  },
+  {
+    "engine": "go",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 4,
+    "n": 30000,
+    "ns": 10523625,
+    "ns_per_message": 116.92916666666666,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/go-bench",
+      "fanin",
+      "30000",
+      "64",
+      "4"
+    ]
+  },
+  {
+    "engine": "go",
+    "mode": "ready",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 1184083,
+    "ns_per_message": 39.469433333333335,
+    "counts": [
+      9997,
+      10016,
+      9987
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/go-bench",
+      "ready",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 4,
+    "n": 30000,
+    "ns": 37297458,
+    "ns_per_message": 414.4162,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-bench",
+      "fanin",
+      "30000",
+      "64",
+      "4"
+    ]
+  },
+  {
+    "engine": "asio",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 4,
+    "n": 30000,
+    "ns": 38202625,
+    "ns_per_message": 424.4736111111111,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-bench",
+      "fanin",
+      "30000",
+      "64",
+      "4"
+    ]
+  },
+  {
+    "engine": "crossbeam",
+    "mode": "mixed",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 637750,
+    "ns_per_message": 21.258333333333333,
+    "counts": [
+      10074,
+      9928,
+      9998
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "crossbeam",
+      "mixed",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 32526666,
+    "ns_per_message": 361.4074,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-reuse-bench",
+      "fanin",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "tokio",
+    "mode": "mixed",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 684792,
+    "ns_per_message": 22.8264,
+    "counts": [
+      9865,
+      10058,
+      10077
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "tokio",
+      "mixed",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio",
+    "mode": "mixed",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 2270459,
+    "ns_per_message": 75.68196666666667,
+    "counts": [
+      9962,
+      9852,
+      10186
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-bench",
+      "mixed",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 33037166,
+    "ns_per_message": 367.0796222222222,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-bench",
+      "fanin",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "go",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 7495959,
+    "ns_per_message": 83.28843333333333,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/go-bench",
+      "fanin",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "go",
+    "mode": "mixed",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 1234459,
+    "ns_per_message": 41.148633333333336,
+    "counts": [
+      10078,
+      10013,
+      9909
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/go-bench",
+      "mixed",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "go",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 7588709,
+    "ns_per_message": 84.3189888888889,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/go-bench",
+      "fanin",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 4,
+    "n": 30000,
+    "ns": 35968958,
+    "ns_per_message": 399.6550888888889,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-reuse-bench",
+      "fanin",
+      "30000",
+      "64",
+      "4"
+    ]
+  },
+  {
+    "engine": "go",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 1,
+    "n": 30000,
+    "ns": 3912625,
+    "ns_per_message": 43.47361111111111,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/go-bench",
+      "fanin",
+      "30000",
+      "64",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-baseline",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 4,
+    "n": 30000,
+    "ns": 446617208,
+    "ns_per_message": 4962.413422222222,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-baseline-bench",
+      "fanin",
+      "30000",
+      "1",
+      "4"
+    ]
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 32992458,
+    "ns_per_message": 366.5828666666667,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-reuse-bench",
+      "fanin",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 4,
+    "n": 30000,
+    "ns": 207829500,
+    "ns_per_message": 2309.2166666666667,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-reuse-bench",
+      "fanin",
+      "30000",
+      "0",
+      "4"
+    ]
+  },
+  {
+    "engine": "go",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 1,
+    "n": 30000,
+    "ns": 3922083,
+    "ns_per_message": 43.5787,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/go-bench",
+      "fanin",
+      "30000",
+      "64",
+      "1"
+    ]
+  },
+  {
+    "engine": "tokio",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 4,
+    "n": 30000,
+    "ns": 5819167,
+    "ns_per_message": 64.65741111111112,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "tokio",
+      "fanin",
+      "30000",
+      "64",
+      "4"
+    ]
+  },
+  {
+    "engine": "go",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 1,
+    "n": 30000,
+    "ns": 9317083,
+    "ns_per_message": 103.52314444444444,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/go-bench",
+      "fanin",
+      "30000",
+      "0",
+      "1"
+    ]
+  },
+  {
+    "engine": "tokio",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 4,
+    "n": 30000,
+    "ns": 5767292,
+    "ns_per_message": 64.08102222222222,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "tokio",
+      "fanin",
+      "30000",
+      "64",
+      "4"
+    ]
+  },
+  {
+    "engine": "go",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 4,
+    "n": 30000,
+    "ns": 18908209,
+    "ns_per_message": 210.0912111111111,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/go-bench",
+      "fanin",
+      "30000",
+      "0",
+      "4"
+    ]
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 4,
+    "n": 30000,
+    "ns": 207895083,
+    "ns_per_message": 2309.945366666667,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-reuse-bench",
+      "fanin",
+      "30000",
+      "0",
+      "4"
+    ]
+  },
+  {
+    "engine": "tokio",
+    "mode": "mixed",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 722917,
+    "ns_per_message": 24.09723333333333,
+    "counts": [
+      10009,
+      10052,
+      9939
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "tokio",
+      "mixed",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 4,
+    "n": 30000,
+    "ns": 36058375,
+    "ns_per_message": 400.6486111111111,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-reuse-bench",
+      "fanin",
+      "30000",
+      "64",
+      "4"
+    ]
+  },
+  {
+    "engine": "tokio",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 6377041,
+    "ns_per_message": 70.85601111111112,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "tokio",
+      "fanin",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 32939792,
+    "ns_per_message": 365.9976888888889,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-reuse-bench",
+      "fanin",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio",
+    "mode": "ready",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 2215542,
+    "ns_per_message": 73.8514,
+    "counts": [
+      10034,
+      10023,
+      9943
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-bench",
+      "ready",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 4,
+    "n": 30000,
+    "ns": 36578833,
+    "ns_per_message": 406.4314777777778,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-reuse-bench",
+      "fanin",
+      "30000",
+      "64",
+      "4"
+    ]
+  },
+  {
+    "engine": "tokio",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 6372000,
+    "ns_per_message": 70.8,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "tokio",
+      "fanin",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-baseline",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 4,
+    "n": 30000,
+    "ns": 510151625,
+    "ns_per_message": 5668.351388888889,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-baseline-bench",
+      "fanin",
+      "30000",
+      "0",
+      "4"
+    ]
+  },
+  {
+    "engine": "asio",
+    "mode": "ready",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 2302834,
+    "ns_per_message": 76.76113333333333,
+    "counts": [
+      9987,
+      10061,
+      9952
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-bench",
+      "ready",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 1,
+    "n": 30000,
+    "ns": 10725208,
+    "ns_per_message": 119.16897777777778,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-bench",
+      "fanin",
+      "30000",
+      "64",
+      "1"
+    ]
+  },
+  {
+    "engine": "crossbeam",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 4,
+    "n": 30000,
+    "ns": 124962250,
+    "ns_per_message": 1388.4694444444444,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "crossbeam",
+      "fanin",
+      "30000",
+      "0",
+      "4"
+    ]
+  },
+  {
+    "engine": "crossbeam",
+    "mode": "ready",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 598791,
+    "ns_per_message": 19.9597,
+    "counts": [
+      10074,
+      9928,
+      9998
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "crossbeam",
+      "ready",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-baseline",
+    "mode": "mixed",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 667176833,
+    "ns_per_message": 22239.227766666667,
+    "counts": [
+      9965,
+      9967,
+      10068
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-baseline-bench",
+      "mixed",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 4,
+    "n": 30000,
+    "ns": 103363958,
+    "ns_per_message": 1148.4884222222222,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-bench",
+      "fanin",
+      "30000",
+      "1",
+      "4"
+    ]
+  },
+  {
+    "engine": "go",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 4,
+    "n": 30000,
+    "ns": 10460417,
+    "ns_per_message": 116.22685555555556,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/go-bench",
+      "fanin",
+      "30000",
+      "64",
+      "4"
+    ]
+  },
+  {
+    "engine": "asio",
+    "mode": "ready",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 2250792,
+    "ns_per_message": 75.0264,
+    "counts": [
+      10001,
+      9940,
+      10059
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-bench",
+      "ready",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 32854875,
+    "ns_per_message": 365.0541666666667,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-reuse-bench",
+      "fanin",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-baseline",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 4,
+    "n": 30000,
+    "ns": 418635542,
+    "ns_per_message": 4651.506022222222,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-baseline-bench",
+      "fanin",
+      "30000",
+      "1",
+      "4"
+    ]
+  },
+  {
+    "engine": "go",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 1,
+    "n": 30000,
+    "ns": 4260333,
+    "ns_per_message": 47.33703333333333,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/go-bench",
+      "fanin",
+      "30000",
+      "64",
+      "1"
+    ]
+  },
+  {
+    "engine": "tokio",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 4,
+    "n": 30000,
+    "ns": 20577042,
+    "ns_per_message": 228.6338,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "tokio",
+      "fanin",
+      "30000",
+      "1",
+      "4"
+    ]
+  },
+  {
+    "engine": "asio-baseline",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 1,
+    "n": 30000,
+    "ns": 2039515625,
+    "ns_per_message": 22661.284722222223,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-baseline-bench",
+      "fanin",
+      "30000",
+      "0",
+      "1"
+    ]
+  },
+  {
+    "engine": "go",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 7400416,
+    "ns_per_message": 82.22684444444444,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/go-bench",
+      "fanin",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "go",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 4,
+    "n": 30000,
+    "ns": 16966291,
+    "ns_per_message": 188.51434444444445,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/go-bench",
+      "fanin",
+      "30000",
+      "0",
+      "4"
+    ]
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 32816250,
+    "ns_per_message": 364.625,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-reuse-bench",
+      "fanin",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 4,
+    "n": 30000,
+    "ns": 39108042,
+    "ns_per_message": 434.5338,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-bench",
+      "fanin",
+      "30000",
+      "64",
+      "4"
+    ]
+  },
+  {
+    "engine": "go",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 4,
+    "n": 30000,
+    "ns": 13869709,
+    "ns_per_message": 154.1078777777778,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/go-bench",
+      "fanin",
+      "30000",
+      "1",
+      "4"
+    ]
+  },
+  {
+    "engine": "crossbeam",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 4,
+    "n": 30000,
+    "ns": 136143250,
+    "ns_per_message": 1512.7027777777778,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "crossbeam",
+      "fanin",
+      "30000",
+      "0",
+      "4"
+    ]
+  },
+  {
+    "engine": "asio",
+    "mode": "ready",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 2219959,
+    "ns_per_message": 73.99863333333333,
+    "counts": [
+      9972,
+      9979,
+      10049
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-bench",
+      "ready",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "crossbeam",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 4,
+    "n": 30000,
+    "ns": 4910833,
+    "ns_per_message": 54.56481111111111,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "crossbeam",
+      "fanin",
+      "30000",
+      "64",
+      "4"
+    ]
+  },
+  {
+    "engine": "asio-baseline",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 2014464417,
+    "ns_per_message": 22382.93796666667,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-baseline-bench",
+      "fanin",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio",
+    "mode": "mixed",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 2246042,
+    "ns_per_message": 74.86806666666666,
+    "counts": [
+      9949,
+      10124,
+      9927
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-bench",
+      "mixed",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-baseline",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 2019505125,
+    "ns_per_message": 22438.945833333335,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-baseline-bench",
+      "fanin",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-baseline",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 4,
+    "n": 30000,
+    "ns": 439304208,
+    "ns_per_message": 4881.157866666666,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-baseline-bench",
+      "fanin",
+      "30000",
+      "64",
+      "4"
+    ]
+  },
+  {
+    "engine": "asio",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 32817000,
+    "ns_per_message": 364.6333333333333,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-bench",
+      "fanin",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "crossbeam",
+    "mode": "ready",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 608625,
+    "ns_per_message": 20.2875,
+    "counts": [
+      10074,
+      9928,
+      9998
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "crossbeam",
+      "ready",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 1,
+    "n": 30000,
+    "ns": 50321250,
+    "ns_per_message": 559.125,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-reuse-bench",
+      "fanin",
+      "30000",
+      "0",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-baseline",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 1,
+    "n": 30000,
+    "ns": 2024039417,
+    "ns_per_message": 22489.326855555555,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-baseline-bench",
+      "fanin",
+      "30000",
+      "64",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio",
+    "mode": "ready",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 2183542,
+    "ns_per_message": 72.78473333333334,
+    "counts": [
+      9986,
+      9963,
+      10051
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-bench",
+      "ready",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-baseline",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 4,
+    "n": 30000,
+    "ns": 427740291,
+    "ns_per_message": 4752.6699,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-baseline-bench",
+      "fanin",
+      "30000",
+      "64",
+      "4"
+    ]
+  },
+  {
+    "engine": "crossbeam",
+    "mode": "mixed",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 626708,
+    "ns_per_message": 20.890266666666665,
+    "counts": [
+      10074,
+      9928,
+      9998
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "crossbeam",
+      "mixed",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 1,
+    "n": 30000,
+    "ns": 10785875,
+    "ns_per_message": 119.84305555555555,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-bench",
+      "fanin",
+      "30000",
+      "64",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-baseline",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 1,
+    "n": 30000,
+    "ns": 2018594958,
+    "ns_per_message": 22428.832866666668,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-baseline-bench",
+      "fanin",
+      "30000",
+      "64",
+      "1"
+    ]
+  },
+  {
+    "engine": "tokio",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 6298875,
+    "ns_per_message": 69.9875,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "tokio",
+      "fanin",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "mixed",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 2226875,
+    "ns_per_message": 74.22916666666667,
+    "counts": [
+      10155,
+      9973,
+      9872
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-reuse-bench",
+      "mixed",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 1,
+    "n": 30000,
+    "ns": 48083708,
+    "ns_per_message": 534.2634222222222,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-bench",
+      "fanin",
+      "30000",
+      "0",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-baseline",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 4,
+    "n": 30000,
+    "ns": 444008083,
+    "ns_per_message": 4933.423144444444,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-baseline-bench",
+      "fanin",
+      "30000",
+      "1",
+      "4"
+    ]
+  },
+  {
+    "engine": "asio",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 32727041,
+    "ns_per_message": 363.6337888888889,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-bench",
+      "fanin",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-baseline",
+    "mode": "mixed",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 668328333,
+    "ns_per_message": 22277.6111,
+    "counts": [
+      10154,
+      9888,
+      9958
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-baseline-bench",
+      "mixed",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "crossbeam",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 4,
+    "n": 30000,
+    "ns": 11270291,
+    "ns_per_message": 125.22545555555556,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "crossbeam",
+      "fanin",
+      "30000",
+      "1",
+      "4"
+    ]
+  },
+  {
+    "engine": "asio-baseline",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 4,
+    "n": 30000,
+    "ns": 435607125,
+    "ns_per_message": 4840.079166666666,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-baseline-bench",
+      "fanin",
+      "30000",
+      "64",
+      "4"
+    ]
+  },
+  {
+    "engine": "tokio",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 4,
+    "n": 30000,
+    "ns": 5866791,
+    "ns_per_message": 65.18656666666666,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "tokio",
+      "fanin",
+      "30000",
+      "64",
+      "4"
+    ]
+  },
+  {
+    "engine": "go",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 4,
+    "n": 30000,
+    "ns": 14105667,
+    "ns_per_message": 156.72963333333334,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/go-bench",
+      "fanin",
+      "30000",
+      "1",
+      "4"
+    ]
+  },
+  {
+    "engine": "tokio",
+    "mode": "ready",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 639875,
+    "ns_per_message": 21.329166666666666,
+    "counts": [
+      9957,
+      9949,
+      10094
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "tokio",
+      "ready",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-baseline",
+    "mode": "ready",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 668523833,
+    "ns_per_message": 22284.12776666667,
+    "counts": [
+      10158,
+      9956,
+      9886
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-baseline-bench",
+      "ready",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 4,
+    "n": 30000,
+    "ns": 104162917,
+    "ns_per_message": 1157.3657444444445,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-bench",
+      "fanin",
+      "30000",
+      "1",
+      "4"
+    ]
+  },
+  {
+    "engine": "asio",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 4,
+    "n": 30000,
+    "ns": 38254292,
+    "ns_per_message": 425.0476888888889,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-bench",
+      "fanin",
+      "30000",
+      "64",
+      "4"
+    ]
+  },
+  {
+    "engine": "crossbeam",
+    "mode": "ready",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 616667,
+    "ns_per_message": 20.555566666666667,
+    "counts": [
+      10074,
+      9928,
+      9998
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "crossbeam",
+      "ready",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-baseline",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 2022312583,
+    "ns_per_message": 22470.139811111112,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-baseline-bench",
+      "fanin",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-baseline",
+    "mode": "mixed",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 664189250,
+    "ns_per_message": 22139.641666666666,
+    "counts": [
+      9977,
+      10051,
+      9972
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-baseline-bench",
+      "mixed",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "ready",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 2275083,
+    "ns_per_message": 75.8361,
+    "counts": [
+      10085,
+      9908,
+      10007
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-reuse-bench",
+      "ready",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "go",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 1,
+    "n": 30000,
+    "ns": 9733459,
+    "ns_per_message": 108.14954444444444,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/go-bench",
+      "fanin",
+      "30000",
+      "0",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 32445250,
+    "ns_per_message": 360.5027777777778,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-bench",
+      "fanin",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 4,
+    "n": 30000,
+    "ns": 103989292,
+    "ns_per_message": 1155.4365777777778,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-bench",
+      "fanin",
+      "30000",
+      "1",
+      "4"
+    ]
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 4,
+    "n": 30000,
+    "ns": 35677334,
+    "ns_per_message": 396.4148222222222,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-reuse-bench",
+      "fanin",
+      "30000",
+      "64",
+      "4"
+    ]
+  },
+  {
+    "engine": "crossbeam",
+    "mode": "mixed",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 630125,
+    "ns_per_message": 21.004166666666666,
+    "counts": [
+      10074,
+      9928,
+      9998
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "crossbeam",
+      "mixed",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 4,
+    "n": 30000,
+    "ns": 206059875,
+    "ns_per_message": 2289.554166666667,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-bench",
+      "fanin",
+      "30000",
+      "0",
+      "4"
+    ]
+  },
+  {
+    "engine": "tokio",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 6426041,
+    "ns_per_message": 71.40045555555555,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "tokio",
+      "fanin",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 4,
+    "n": 30000,
+    "ns": 206417250,
+    "ns_per_message": 2293.525,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-reuse-bench",
+      "fanin",
+      "30000",
+      "0",
+      "4"
+    ]
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "mixed",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 2292125,
+    "ns_per_message": 76.40416666666667,
+    "counts": [
+      10071,
+      10005,
+      9924
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-reuse-bench",
+      "mixed",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "crossbeam",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 4,
+    "n": 30000,
+    "ns": 9031209,
+    "ns_per_message": 100.34676666666667,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "crossbeam",
+      "fanin",
+      "30000",
+      "1",
+      "4"
+    ]
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "mixed",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 2346375,
+    "ns_per_message": 78.2125,
+    "counts": [
+      9938,
+      10001,
+      10061
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-reuse-bench",
+      "mixed",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 4,
+    "n": 30000,
+    "ns": 103394042,
+    "ns_per_message": 1148.822688888889,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-bench",
+      "fanin",
+      "30000",
+      "1",
+      "4"
+    ]
+  },
+  {
+    "engine": "crossbeam",
+    "mode": "ready",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 627833,
+    "ns_per_message": 20.927766666666667,
+    "counts": [
+      10074,
+      9928,
+      9998
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "crossbeam",
+      "ready",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 1,
+    "n": 30000,
+    "ns": 10723458,
+    "ns_per_message": 119.14953333333334,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-bench",
+      "fanin",
+      "30000",
+      "64",
+      "1"
+    ]
+  },
+  {
+    "engine": "tokio",
+    "mode": "mixed",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 688000,
+    "ns_per_message": 22.933333333333334,
+    "counts": [
+      9940,
+      10010,
+      10050
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "tokio",
+      "mixed",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "go",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 4,
+    "n": 30000,
+    "ns": 10628042,
+    "ns_per_message": 118.08935555555556,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/go-bench",
+      "fanin",
+      "30000",
+      "64",
+      "4"
+    ]
+  },
+  {
+    "engine": "crossbeam",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 4,
+    "n": 30000,
+    "ns": 4691625,
+    "ns_per_message": 52.12916666666667,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "crossbeam",
+      "fanin",
+      "30000",
+      "64",
+      "4"
+    ]
+  },
+  {
+    "engine": "go",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 1,
+    "n": 30000,
+    "ns": 3801625,
+    "ns_per_message": 42.24027777777778,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/go-bench",
+      "fanin",
+      "30000",
+      "64",
+      "1"
+    ]
+  },
+  {
+    "engine": "go",
+    "mode": "ready",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 1226708,
+    "ns_per_message": 40.89026666666667,
+    "counts": [
+      9956,
+      9983,
+      10061
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/go-bench",
+      "ready",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "go",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 4,
+    "n": 30000,
+    "ns": 10886084,
+    "ns_per_message": 120.95648888888888,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/go-bench",
+      "fanin",
+      "30000",
+      "64",
+      "4"
+    ]
+  },
+  {
+    "engine": "tokio",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 4,
+    "n": 30000,
+    "ns": 5804583,
+    "ns_per_message": 64.49536666666667,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "tokio",
+      "fanin",
+      "30000",
+      "64",
+      "4"
+    ]
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 1,
+    "n": 30000,
+    "ns": 10743833,
+    "ns_per_message": 119.37592222222223,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-reuse-bench",
+      "fanin",
+      "30000",
+      "64",
+      "1"
+    ]
+  },
+  {
+    "engine": "go",
+    "mode": "ready",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 1179458,
+    "ns_per_message": 39.315266666666666,
+    "counts": [
+      9918,
+      10066,
+      10016
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/go-bench",
+      "ready",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "go",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 4,
+    "n": 30000,
+    "ns": 10640000,
+    "ns_per_message": 118.22222222222223,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/go-bench",
+      "fanin",
+      "30000",
+      "64",
+      "4"
+    ]
+  },
+  {
+    "engine": "tokio",
+    "mode": "ready",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 648458,
+    "ns_per_message": 21.615266666666667,
+    "counts": [
+      9859,
+      10136,
+      10005
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "tokio",
+      "ready",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "go",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 1,
+    "n": 30000,
+    "ns": 9459958,
+    "ns_per_message": 105.11064444444445,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/go-bench",
+      "fanin",
+      "30000",
+      "0",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-baseline",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 4,
+    "n": 30000,
+    "ns": 513733542,
+    "ns_per_message": 5708.150466666667,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-baseline-bench",
+      "fanin",
+      "30000",
+      "0",
+      "4"
+    ]
+  },
+  {
+    "engine": "asio-baseline",
+    "mode": "ready",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 658283791,
+    "ns_per_message": 21942.79303333333,
+    "counts": [
+      9935,
+      10053,
+      10012
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-baseline-bench",
+      "ready",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 4,
+    "n": 30000,
+    "ns": 204535333,
+    "ns_per_message": 2272.614811111111,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-bench",
+      "fanin",
+      "30000",
+      "0",
+      "4"
+    ]
+  },
+  {
+    "engine": "tokio",
+    "mode": "ready",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 628792,
+    "ns_per_message": 20.959733333333332,
+    "counts": [
+      9984,
+      10060,
+      9956
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "tokio",
+      "ready",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "mixed",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 2305084,
+    "ns_per_message": 76.83613333333334,
+    "counts": [
+      10023,
+      9913,
+      10064
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-reuse-bench",
+      "mixed",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-baseline",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 2018544250,
+    "ns_per_message": 22428.269444444446,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-baseline-bench",
+      "fanin",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "go",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 4,
+    "n": 30000,
+    "ns": 14368167,
+    "ns_per_message": 159.6463,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/go-bench",
+      "fanin",
+      "30000",
+      "1",
+      "4"
+    ]
+  },
+  {
+    "engine": "go",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 4,
+    "n": 30000,
+    "ns": 17216083,
+    "ns_per_message": 191.2898111111111,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/go-bench",
+      "fanin",
+      "30000",
+      "0",
+      "4"
+    ]
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 4,
+    "n": 30000,
+    "ns": 206651125,
+    "ns_per_message": 2296.123611111111,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-reuse-bench",
+      "fanin",
+      "30000",
+      "0",
+      "4"
+    ]
+  },
+  {
+    "engine": "crossbeam",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 4,
+    "n": 30000,
+    "ns": 126351500,
+    "ns_per_message": 1403.9055555555556,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "crossbeam",
+      "fanin",
+      "30000",
+      "0",
+      "4"
+    ]
+  },
+  {
+    "engine": "tokio",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 1,
+    "n": 30000,
+    "ns": 2612042,
+    "ns_per_message": 29.02268888888889,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "tokio",
+      "fanin",
+      "30000",
+      "64",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 4,
+    "n": 30000,
+    "ns": 37591875,
+    "ns_per_message": 417.6875,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-bench",
+      "fanin",
+      "30000",
+      "64",
+      "4"
+    ]
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 4,
+    "n": 30000,
+    "ns": 104505833,
+    "ns_per_message": 1161.1759222222222,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-reuse-bench",
+      "fanin",
+      "30000",
+      "1",
+      "4"
+    ]
+  },
+  {
+    "engine": "asio",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 4,
+    "n": 30000,
+    "ns": 36914375,
+    "ns_per_message": 410.15972222222223,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-bench",
+      "fanin",
+      "30000",
+      "64",
+      "4"
+    ]
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 4,
+    "n": 30000,
+    "ns": 103926416,
+    "ns_per_message": 1154.7379555555556,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-reuse-bench",
+      "fanin",
+      "30000",
+      "1",
+      "4"
+    ]
+  },
+  {
+    "engine": "asio",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 32956583,
+    "ns_per_message": 366.1842555555556,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-bench",
+      "fanin",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 1,
+    "n": 30000,
+    "ns": 48561625,
+    "ns_per_message": 539.5736111111111,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-bench",
+      "fanin",
+      "30000",
+      "0",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio",
+    "mode": "ready",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 2280875,
+    "ns_per_message": 76.02916666666667,
+    "counts": [
+      10147,
+      9932,
+      9921
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-bench",
+      "ready",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "ready",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 2453792,
+    "ns_per_message": 81.79306666666666,
+    "counts": [
+      9958,
+      9954,
+      10088
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-reuse-bench",
+      "ready",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "go",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 4,
+    "n": 30000,
+    "ns": 14501083,
+    "ns_per_message": 161.12314444444445,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/go-bench",
+      "fanin",
+      "30000",
+      "1",
+      "4"
+    ]
+  },
+  {
+    "engine": "go",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 4,
+    "n": 30000,
+    "ns": 14086667,
+    "ns_per_message": 156.51852222222223,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/go-bench",
+      "fanin",
+      "30000",
+      "1",
+      "4"
+    ]
+  },
+  {
+    "engine": "go",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 4,
+    "n": 30000,
+    "ns": 17044250,
+    "ns_per_message": 189.38055555555556,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/go-bench",
+      "fanin",
+      "30000",
+      "0",
+      "4"
+    ]
+  },
+  {
+    "engine": "go",
+    "mode": "mixed",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 1292625,
+    "ns_per_message": 43.0875,
+    "counts": [
+      9889,
+      9960,
+      10151
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/go-bench",
+      "mixed",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 1,
+    "n": 30000,
+    "ns": 10907958,
+    "ns_per_message": 121.19953333333333,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-reuse-bench",
+      "fanin",
+      "30000",
+      "64",
+      "1"
+    ]
+  },
+  {
+    "engine": "go",
+    "mode": "mixed",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 1203417,
+    "ns_per_message": 40.1139,
+    "counts": [
+      10029,
+      9933,
+      10038
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/go-bench",
+      "mixed",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "tokio",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 4,
+    "n": 30000,
+    "ns": 6057833,
+    "ns_per_message": 67.30925555555555,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "tokio",
+      "fanin",
+      "30000",
+      "64",
+      "4"
+    ]
+  },
+  {
+    "engine": "asio-baseline",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 1,
+    "n": 30000,
+    "ns": 2024811750,
+    "ns_per_message": 22497.908333333333,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-baseline-bench",
+      "fanin",
+      "30000",
+      "64",
+      "1"
+    ]
+  },
+  {
+    "engine": "go",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 1,
+    "n": 30000,
+    "ns": 9399166,
+    "ns_per_message": 104.43517777777778,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/go-bench",
+      "fanin",
+      "30000",
+      "0",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio",
+    "mode": "mixed",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 2229750,
+    "ns_per_message": 74.325,
+    "counts": [
+      9748,
+      10093,
+      10159
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-bench",
+      "mixed",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "tokio",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 4,
+    "n": 30000,
+    "ns": 16259333,
+    "ns_per_message": 180.65925555555555,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "tokio",
+      "fanin",
+      "30000",
+      "1",
+      "4"
+    ]
+  },
+  {
+    "engine": "crossbeam",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 4,
+    "n": 30000,
+    "ns": 4399000,
+    "ns_per_message": 48.87777777777778,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "crossbeam",
+      "fanin",
+      "30000",
+      "64",
+      "4"
+    ]
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 1,
+    "n": 30000,
+    "ns": 86235125,
+    "ns_per_message": 958.1680555555556,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-reuse-bench",
+      "fanin",
+      "30000",
+      "0",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 1,
+    "n": 30000,
+    "ns": 52903833,
+    "ns_per_message": 587.8203666666667,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-reuse-bench",
+      "fanin",
+      "30000",
+      "0",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 1,
+    "n": 30000,
+    "ns": 11017875,
+    "ns_per_message": 122.42083333333333,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-bench",
+      "fanin",
+      "30000",
+      "64",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 4,
+    "n": 30000,
+    "ns": 206462791,
+    "ns_per_message": 2294.031011111111,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-bench",
+      "fanin",
+      "30000",
+      "0",
+      "4"
+    ]
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 1,
+    "n": 30000,
+    "ns": 10751042,
+    "ns_per_message": 119.45602222222222,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-reuse-bench",
+      "fanin",
+      "30000",
+      "64",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-baseline",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 2020701167,
+    "ns_per_message": 22452.235188888888,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-baseline-bench",
+      "fanin",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "go",
+    "mode": "mixed",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 1181667,
+    "ns_per_message": 39.3889,
+    "counts": [
+      9923,
+      10005,
+      10072
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/go-bench",
+      "mixed",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 4,
+    "n": 30000,
+    "ns": 101837750,
+    "ns_per_message": 1131.5305555555556,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-reuse-bench",
+      "fanin",
+      "30000",
+      "1",
+      "4"
+    ]
+  },
+  {
+    "engine": "asio-baseline",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 1,
+    "n": 30000,
+    "ns": 2042791084,
+    "ns_per_message": 22697.67871111111,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-baseline-bench",
+      "fanin",
+      "30000",
+      "0",
+      "1"
+    ]
+  },
+  {
+    "engine": "tokio",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 1,
+    "n": 30000,
+    "ns": 2611042,
+    "ns_per_message": 29.011577777777777,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "tokio",
+      "fanin",
+      "30000",
+      "64",
+      "1"
+    ]
+  },
+  {
+    "engine": "crossbeam",
+    "mode": "mixed",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 619750,
+    "ns_per_message": 20.658333333333335,
+    "counts": [
+      10074,
+      9928,
+      9998
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "crossbeam",
+      "mixed",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-baseline",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 4,
+    "n": 30000,
+    "ns": 439931000,
+    "ns_per_message": 4888.122222222222,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-baseline-bench",
+      "fanin",
+      "30000",
+      "64",
+      "4"
+    ]
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 4,
+    "n": 30000,
+    "ns": 36328208,
+    "ns_per_message": 403.64675555555556,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-reuse-bench",
+      "fanin",
+      "30000",
+      "64",
+      "4"
+    ]
+  },
+  {
+    "engine": "tokio",
+    "mode": "ready",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 694000,
+    "ns_per_message": 23.133333333333333,
+    "counts": [
+      10140,
+      9859,
+      10001
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "tokio",
+      "ready",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "go",
+    "mode": "ready",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 1204834,
+    "ns_per_message": 40.16113333333333,
+    "counts": [
+      9936,
+      10002,
+      10062
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/go-bench",
+      "ready",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "go",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 7655750,
+    "ns_per_message": 85.06388888888888,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/go-bench",
+      "fanin",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "crossbeam",
+    "mode": "mixed",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 640000,
+    "ns_per_message": 21.333333333333332,
+    "counts": [
+      10074,
+      9928,
+      9998
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "crossbeam",
+      "mixed",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "go",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 4,
+    "n": 30000,
+    "ns": 14178500,
+    "ns_per_message": 157.5388888888889,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/go-bench",
+      "fanin",
+      "30000",
+      "1",
+      "4"
+    ]
+  },
+  {
+    "engine": "asio-baseline",
+    "mode": "mixed",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 661019500,
+    "ns_per_message": 22033.983333333334,
+    "counts": [
+      9995,
+      10158,
+      9847
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-baseline-bench",
+      "mixed",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-baseline",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 1,
+    "n": 30000,
+    "ns": 2014337833,
+    "ns_per_message": 22381.53147777778,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-baseline-bench",
+      "fanin",
+      "30000",
+      "0",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio",
+    "mode": "mixed",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 2194042,
+    "ns_per_message": 73.13473333333333,
+    "counts": [
+      10056,
+      9891,
+      10053
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-bench",
+      "mixed",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio",
+    "mode": "mixed",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 2265083,
+    "ns_per_message": 75.50276666666667,
+    "counts": [
+      10047,
+      9952,
+      10001
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-bench",
+      "mixed",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "tokio",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 4,
+    "n": 30000,
+    "ns": 22773417,
+    "ns_per_message": 253.03796666666668,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "tokio",
+      "fanin",
+      "30000",
+      "1",
+      "4"
+    ]
+  },
+  {
+    "engine": "asio-baseline",
+    "mode": "ready",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 672961292,
+    "ns_per_message": 22432.043066666665,
+    "counts": [
+      10010,
+      10093,
+      9897
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-baseline-bench",
+      "ready",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "tokio",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 4,
+    "n": 30000,
+    "ns": 22913083,
+    "ns_per_message": 254.58981111111112,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "tokio",
+      "fanin",
+      "30000",
+      "1",
+      "4"
+    ]
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 4,
+    "n": 30000,
+    "ns": 95647417,
+    "ns_per_message": 1062.7490777777778,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-reuse-bench",
+      "fanin",
+      "30000",
+      "1",
+      "4"
+    ]
+  },
+  {
+    "engine": "asio-baseline",
+    "mode": "ready",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 674074708,
+    "ns_per_message": 22469.156933333332,
+    "counts": [
+      9919,
+      9968,
+      10113
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-baseline-bench",
+      "ready",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 1,
+    "n": 30000,
+    "ns": 49481916,
+    "ns_per_message": 549.7990666666667,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-bench",
+      "fanin",
+      "30000",
+      "0",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 1,
+    "n": 30000,
+    "ns": 10551834,
+    "ns_per_message": 117.2426,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-bench",
+      "fanin",
+      "30000",
+      "64",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-baseline",
+    "mode": "mixed",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 664647958,
+    "ns_per_message": 22154.931933333333,
+    "counts": [
+      9893,
+      10006,
+      10101
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-baseline-bench",
+      "mixed",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 4,
+    "n": 30000,
+    "ns": 207546209,
+    "ns_per_message": 2306.0689888888887,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-reuse-bench",
+      "fanin",
+      "30000",
+      "0",
+      "4"
+    ]
+  },
+  {
+    "engine": "go",
+    "mode": "mixed",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 1244334,
+    "ns_per_message": 41.4778,
+    "counts": [
+      10083,
+      9893,
+      10024
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/go-bench",
+      "mixed",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 32468750,
+    "ns_per_message": 360.7638888888889,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-bench",
+      "fanin",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "tokio",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 6342833,
+    "ns_per_message": 70.47592222222222,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "tokio",
+      "fanin",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-baseline",
+    "mode": "ready",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 669325708,
+    "ns_per_message": 22310.856933333333,
+    "counts": [
+      10059,
+      9888,
+      10053
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-baseline-bench",
+      "ready",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 4,
+    "n": 30000,
+    "ns": 209498334,
+    "ns_per_message": 2327.7592666666665,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-reuse-bench",
+      "fanin",
+      "30000",
+      "0",
+      "4"
+    ]
+  },
+  {
+    "engine": "crossbeam",
+    "mode": "ready",
+    "capacity": 1,
+    "workers": 1,
+    "n": 30000,
+    "ns": 613625,
+    "ns_per_message": 20.454166666666666,
+    "counts": [
+      10074,
+      9928,
+      9998
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "crossbeam",
+      "ready",
+      "30000",
+      "1",
+      "1"
+    ]
+  },
+  {
+    "engine": "asio-baseline",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 4,
+    "n": 30000,
+    "ns": 452574041,
+    "ns_per_message": 5028.6004555555555,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/private/tmp/kth-select-bench/published/asio-baseline-bench",
+      "fanin",
+      "30000",
+      "1",
+      "4"
+    ]
+  },
+  {
+    "engine": "crossbeam",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 4,
+    "n": 30000,
+    "ns": 4889791,
+    "ns_per_message": 54.33101111111111,
+    "counts": [
+      30000,
+      30000,
+      30000
+    ],
+    "command": [
+      "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/target/release/select-bench",
+      "crossbeam",
+      "fanin",
+      "30000",
+      "64",
+      "4"
+    ]
+  }
+]

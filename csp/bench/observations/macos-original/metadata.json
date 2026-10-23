@@ -1,0 +1,29 @@
+{
+  "timestamp": "2026-10-24T10:18:57+0200",
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "machine": "Apple M6",
+  "cpu_count": 12,
+  "head": "035b2c7850e26f8d8ecd826899b76ae9bc9db9ae",
+  "tree": "81928be3764bd7f7139911bf1e55b25fb4a7add5",
+  "status": "?? csp/bench/",
+  "n": 30000,
+  "repeats": 7,
+  "source_sha256": {
+    "csp/bench/select.cpp": "136b4b51d81aca428891c054c0ebb56de0d9eb8d590a73fc0ad640b0a8484167",
+    "csp/bench/select.go": "96ca7f4878f4b4d6569838527ef79550b1fe3839fa3793a9bf745426aa60c81b",
+    "csp/bench/rust/src/main.rs": "862a1735e8552d663b650729f82640f4c7915dbf695354fee2b63f4e9e2cd3e7",
+    "csp/bench/rust/Cargo.toml": "9115550d6f2710b49f3ef6a420b64ff13d5b4e43d1f7a9a2b62332b770110d1c",
+    "csp/bench/rust/Cargo.lock": "7d7a65fa45849d865b4ce658d621f04561fa8c19cdc355ec1ec1f76bf0899c06",
+    "csp/bench/run.py": "0d9049c65303c9843ccfd023ad061e76fe1c45911937f67f6d2ea191af88f122",
+    "include/asio/experimental/channel_select.hpp": "1a553194765e1e73513f4584442fd03da12b4d55a932d3bd00c08be70d26e27b"
+  },
+  "binary_sha256": {
+    "asio": "836733a17774c51b9bbe6b761fe3b929e0b9e26e6b44ef77e188043728c1920f",
+    "go": "13e8d3673c82846f98f2a5e855efe7e41b49c066eb5873594de32ec1f6658bbf",
+    "crossbeam": "e961c562e38b870ac88220368cdb6bf10ab8e524e60243fd0780c134ac453fea",
+    "tokio": "e961c562e38b870ac88220368cdb6bf10ab8e524e60243fd0780c134ac453fea"
+  },
+  "clang": "Apple clang version 21.0.0 (clang-2100.3.34.2)\nTarget: arm64-apple-darwin27.0.0\nThread model: posix\nInstalledDir: /Library/Developer/CommandLineTools/usr/bin",
+  "go": "go version go1.27.3 darwin/arm64",
+  "rust": "rustc 1.99.0 (b940084d7 2026-09-28)"
+}
