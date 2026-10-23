@@ -1,0 +1,88 @@
+{
+  "timestamp": "2026-10-24T11:03:16+0200",
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "machine": "Apple M6",
+  "cpu_count": 12,
+  "affinity": null,
+  "head": "c834f8b7d9db45c9485e4ff40962b89781d9d1cf",
+  "tree": "30b76b4721abc6671763b4c80e6957124a3efa95",
+  "status": "",
+  "n": 30000,
+  "repeats": 7,
+  "source_sha256": {
+    "csp/bench/select.cpp": "136b4b51d81aca428891c054c0ebb56de0d9eb8d590a73fc0ad640b0a8484167",
+    "csp/bench/select.go": "96ca7f4878f4b4d6569838527ef79550b1fe3839fa3793a9bf745426aa60c81b",
+    "csp/bench/rust/src/main.rs": "862a1735e8552d663b650729f82640f4c7915dbf695354fee2b63f4e9e2cd3e7",
+    "csp/bench/rust/Cargo.toml": "9115550d6f2710b49f3ef6a420b64ff13d5b4e43d1f7a9a2b62332b770110d1c",
+    "csp/bench/rust/Cargo.lock": "7d7a65fa45849d865b4ce658d621f04561fa8c19cdc355ec1ec1f76bf0899c06",
+    "csp/bench/build.py": "962899b3c43217d9985a0b88b8e6afef821518f41ced72a9606358f9fa43a6c9",
+    "csp/bench/run.py": "f4306f788a00964c627bfa237fa1680166977589b5acc9131d4cb2b3b96dc204",
+    "include/asio/experimental/channel_select.hpp": "f299765376c3cecca2d5520dac5c7858c8628df3b07b583f39d73f4eba5a3612",
+    "csp/bench/reference/asio/experimental/channel_select.hpp": "1a553194765e1e73513f4584442fd03da12b4d55a932d3bd00c08be70d26e27b"
+  },
+  "build": {
+    "commands": [
+      [
+        "c++",
+        "-std=c++20",
+        "-O3",
+        "-DNDEBUG",
+        "-DASIO_STANDALONE",
+        "-pthread",
+        "-I/Users/fernando/dev/kth/asio-csp/include",
+        "/Users/fernando/dev/kth/asio-csp/csp/bench/select.cpp",
+        "-o",
+        "/private/tmp/kth-select-bench/final/asio-bench"
+      ],
+      [
+        "c++",
+        "-std=c++20",
+        "-O3",
+        "-DNDEBUG",
+        "-DASIO_STANDALONE",
+        "-pthread",
+        "-I/Users/fernando/dev/kth/asio-csp/csp/bench/reference",
+        "-I/Users/fernando/dev/kth/asio-csp/include",
+        "/Users/fernando/dev/kth/asio-csp/csp/bench/select.cpp",
+        "-o",
+        "/private/tmp/kth-select-bench/final/asio-baseline-bench"
+      ],
+      [
+        "/tmp/kth-select-bench/go/bin/go",
+        "build",
+        "-o",
+        "/private/tmp/kth-select-bench/final/go-bench",
+        "/Users/fernando/dev/kth/asio-csp/csp/bench/select.go"
+      ],
+      [
+        "/Users/fernando/.cargo/bin/cargo",
+        "build",
+        "--release",
+        "--locked",
+        "--manifest-path",
+        "/Users/fernando/dev/kth/asio-csp/csp/bench/rust/Cargo.toml"
+      ]
+    ],
+    "versions": {
+      "cxx": "Apple clang version 21.0.0 (clang-2100.3.34.2)\nTarget: arm64-apple-darwin27.0.0\nThread model: posix\nInstalledDir: /Library/Developer/CommandLineTools/usr/bin",
+      "go": "go version go1.27.3 darwin/arm64",
+      "cargo": "cargo 1.99.0 (5f94df478 2026-08-27)",
+      "rustc": "rustc 1.99.0 (b940084d7 2026-09-28)"
+    },
+    "source_sha256": {
+      "include/asio/experimental/channel_select.hpp": "f299765376c3cecca2d5520dac5c7858c8628df3b07b583f39d73f4eba5a3612",
+      "csp/bench/reference/asio/experimental/channel_select.hpp": "1a553194765e1e73513f4584442fd03da12b4d55a932d3bd00c08be70d26e27b",
+      "csp/bench/select.cpp": "136b4b51d81aca428891c054c0ebb56de0d9eb8d590a73fc0ad640b0a8484167",
+      "csp/bench/select.go": "96ca7f4878f4b4d6569838527ef79550b1fe3839fa3793a9bf745426aa60c81b",
+      "csp/bench/rust/src/main.rs": "862a1735e8552d663b650729f82640f4c7915dbf695354fee2b63f4e9e2cd3e7",
+      "csp/bench/rust/Cargo.lock": "7d7a65fa45849d865b4ce658d621f04561fa8c19cdc355ec1ec1f76bf0899c06"
+    }
+  },
+  "binary_sha256": {
+    "asio-baseline": "f7e0142661c1a4050c61d01b8ee4126b3327647d7f21e5ac0c9d70af6d2e51ce",
+    "asio": "e402292db638ff54c1c40751d791b48ba388f7e9ce2abaa21846a6b48f812d72",
+    "go": "13e8d3673c82846f98f2a5e855efe7e41b49c066eb5873594de32ec1f6658bbf",
+    "crossbeam": "e961c562e38b870ac88220368cdb6bf10ab8e524e60243fd0780c134ac453fea",
+    "tokio": "e961c562e38b870ac88220368cdb6bf10ab8e524e60243fd0780c134ac453fea"
+  }
+}

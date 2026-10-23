@@ -1,0 +1,37 @@
+| Engine | Scenario | Capacity | Workers | Median ns/message | Min–max |
+|---|---|---:|---:|---:|---:|
+| asio-baseline | ready | 1 | 1 | 22318.9 | 22215.9–23613.7 |
+| asio-baseline | mixed | 1 | 1 | 22358.6 | 22150.1–22400.5 |
+| asio-baseline | fanin | 0 | 1 | 22492.9 | 22343.5–22643.1 |
+| asio-baseline | fanin | 0 | 4 | 5629.6 | 5057.2–5727.3 |
+| asio-baseline | fanin | 1 | 1 | 22580.0 | 22313.7–26150.9 |
+| asio-baseline | fanin | 1 | 4 | 4899.3 | 4479.3–4960.5 |
+| asio-baseline | fanin | 64 | 1 | 22488.2 | 22350.2–22590.6 |
+| asio-baseline | fanin | 64 | 4 | 4844.1 | 4727.3–4901.5 |
+| asio | ready | 1 | 1 | 74.5 | 73.3–100.9 |
+| asio | mixed | 1 | 1 | 76.0 | 73.5–92.3 |
+| asio | fanin | 0 | 1 | 529.9 | 523.7–543.1 |
+| asio | fanin | 0 | 4 | 2318.1 | 2270.2–2362.1 |
+| asio | fanin | 1 | 1 | 357.8 | 352.5–360.4 |
+| asio | fanin | 1 | 4 | 1140.2 | 869.7–1160.1 |
+| asio | fanin | 64 | 1 | 117.1 | 115.3–127.3 |
+| asio | fanin | 64 | 4 | 420.8 | 409.3–425.6 |
+| go | ready | 1 | 1 | 40.9 | 38.1–43.8 |
+| go | mixed | 1 | 1 | 40.1 | 38.8–50.4 |
+| go | fanin | 0 | 1 | 103.0 | 99.6–120.7 |
+| go | fanin | 0 | 4 | 205.0 | 189.6–210.5 |
+| go | fanin | 1 | 1 | 82.3 | 80.4–86.1 |
+| go | fanin | 1 | 4 | 157.8 | 155.5–160.8 |
+| go | fanin | 64 | 1 | 44.8 | 43.6–53.7 |
+| go | fanin | 64 | 4 | 117.6 | 113.4–144.8 |
+| crossbeam | ready | 1 | 1 | 20.8 | 20.6–21.0 |
+| crossbeam | mixed | 1 | 1 | 21.3 | 21.0–22.4 |
+| crossbeam | fanin | 0 | 4 | 1384.5 | 1367.2–1397.9 |
+| crossbeam | fanin | 1 | 4 | 134.1 | 104.0–192.0 |
+| crossbeam | fanin | 64 | 4 | 53.9 | 52.2–56.7 |
+| tokio | ready | 1 | 1 | 21.0 | 20.7–27.7 |
+| tokio | mixed | 1 | 1 | 22.3 | 22.0–25.0 |
+| tokio | fanin | 1 | 1 | 70.8 | 69.1–71.6 |
+| tokio | fanin | 1 | 4 | 269.5 | 240.7–310.8 |
+| tokio | fanin | 64 | 1 | 29.6 | 28.5–29.7 |
+| tokio | fanin | 64 | 4 | 66.4 | 58.1–68.7 |

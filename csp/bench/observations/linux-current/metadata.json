@@ -1,0 +1,93 @@
+{
+  "timestamp": "2026-10-24T11:03:28+0200",
+  "platform": "Linux-7.1.5-zen1-x86_64-with-glibc2.42",
+  "machine": "AMD Ryzen 9 9950X3D 16-Core Processor",
+  "cpu_count": 32,
+  "affinity": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "head": "c834f8b7d9db45c9485e4ff40962b89781d9d1cf",
+  "tree": "30b76b4721abc6671763b4c80e6957124a3efa95",
+  "status": "?? csp/._CMakeLists.txt\n?? csp/tests/._ready_path.cpp\n?? include/asio/experimental/._channel_select.hpp",
+  "n": 300000,
+  "repeats": 7,
+  "source_sha256": {
+    "csp/bench/select.cpp": "136b4b51d81aca428891c054c0ebb56de0d9eb8d590a73fc0ad640b0a8484167",
+    "csp/bench/select.go": "96ca7f4878f4b4d6569838527ef79550b1fe3839fa3793a9bf745426aa60c81b",
+    "csp/bench/rust/src/main.rs": "862a1735e8552d663b650729f82640f4c7915dbf695354fee2b63f4e9e2cd3e7",
+    "csp/bench/rust/Cargo.toml": "9115550d6f2710b49f3ef6a420b64ff13d5b4e43d1f7a9a2b62332b770110d1c",
+    "csp/bench/rust/Cargo.lock": "7d7a65fa45849d865b4ce658d621f04561fa8c19cdc355ec1ec1f76bf0899c06",
+    "csp/bench/build.py": "962899b3c43217d9985a0b88b8e6afef821518f41ced72a9606358f9fa43a6c9",
+    "csp/bench/run.py": "f4306f788a00964c627bfa237fa1680166977589b5acc9131d4cb2b3b96dc204",
+    "include/asio/experimental/channel_select.hpp": "f299765376c3cecca2d5520dac5c7858c8628df3b07b583f39d73f4eba5a3612",
+    "csp/bench/reference/asio/experimental/channel_select.hpp": "1a553194765e1e73513f4584442fd03da12b4d55a932d3bd00c08be70d26e27b"
+  },
+  "build": {
+    "commands": [
+      [
+        "g++",
+        "-std=c++20",
+        "-O3",
+        "-DNDEBUG",
+        "-DASIO_STANDALONE",
+        "-pthread",
+        "-I/tmp/kth-asio-perf.blmoOk/repo/include",
+        "/tmp/kth-asio-perf.blmoOk/repo/csp/bench/select.cpp",
+        "-o",
+        "/tmp/kth-asio-perf.blmoOk/build-final/asio-bench"
+      ],
+      [
+        "g++",
+        "-std=c++20",
+        "-O3",
+        "-DNDEBUG",
+        "-DASIO_STANDALONE",
+        "-pthread",
+        "-I/tmp/kth-asio-perf.blmoOk/repo/csp/bench/reference",
+        "-I/tmp/kth-asio-perf.blmoOk/repo/include",
+        "/tmp/kth-asio-perf.blmoOk/repo/csp/bench/select.cpp",
+        "-o",
+        "/tmp/kth-asio-perf.blmoOk/build-final/asio-baseline-bench"
+      ],
+      [
+        "/tmp/kth-asio-perf.blmoOk/tools/go/bin/go",
+        "build",
+        "-o",
+        "/tmp/kth-asio-perf.blmoOk/build-final/go-bench",
+        "/tmp/kth-asio-perf.blmoOk/repo/csp/bench/select.go"
+      ],
+      [
+        "/home/fernando/.cargo/bin/cargo",
+        "build",
+        "--release",
+        "--locked",
+        "--manifest-path",
+        "/tmp/kth-asio-perf.blmoOk/repo/csp/bench/rust/Cargo.toml"
+      ]
+    ],
+    "versions": {
+      "cxx": "g++ (GCC) 16.1.0\nCopyright (C) 2026 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.",
+      "go": "go version go1.27.3 linux/amd64",
+      "cargo": "cargo 1.94.1 (29ea6fb6a 2026-03-24)",
+      "rustc": "rustc 1.94.1 (e408947bf 2026-03-25)"
+    },
+    "source_sha256": {
+      "include/asio/experimental/channel_select.hpp": "f299765376c3cecca2d5520dac5c7858c8628df3b07b583f39d73f4eba5a3612",
+      "csp/bench/reference/asio/experimental/channel_select.hpp": "1a553194765e1e73513f4584442fd03da12b4d55a932d3bd00c08be70d26e27b",
+      "csp/bench/select.cpp": "136b4b51d81aca428891c054c0ebb56de0d9eb8d590a73fc0ad640b0a8484167",
+      "csp/bench/select.go": "96ca7f4878f4b4d6569838527ef79550b1fe3839fa3793a9bf745426aa60c81b",
+      "csp/bench/rust/src/main.rs": "862a1735e8552d663b650729f82640f4c7915dbf695354fee2b63f4e9e2cd3e7",
+      "csp/bench/rust/Cargo.lock": "7d7a65fa45849d865b4ce658d621f04561fa8c19cdc355ec1ec1f76bf0899c06"
+    }
+  },
+  "binary_sha256": {
+    "asio-baseline": "80090519d082abb911639db5f004273baf2f4155562c48d16a6d91002c1bcf8e",
+    "asio": "c20f818de095a22f4d29812e84826464b7e9046411b1ad6c037dc78b6859e8bd",
+    "go": "98cce15f9e9987bf795099c277afaddb7f545267852cf5163e924fa9d9f6dc7b",
+    "crossbeam": "735f250e1b97bd9651b55fbff1f18f0b2cb53c5e794597fd6db23982f1137c81",
+    "tokio": "735f250e1b97bd9651b55fbff1f18f0b2cb53c5e794597fd6db23982f1137c81"
+  }
+}
