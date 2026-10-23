@@ -1,0 +1,162 @@
+[
+  {
+    "engine": "asio",
+    "mode": "ready",
+    "capacity": 1,
+    "workers": 1,
+    "median_ns": 78.57035,
+    "min_ns": 77.85308666666667,
+    "max_ns": 80.36451666666666,
+    "messages_per_second": 12727447.440414863
+  },
+  {
+    "engine": "asio",
+    "mode": "mixed",
+    "capacity": 1,
+    "workers": 1,
+    "median_ns": 79.54644666666667,
+    "min_ns": 77.86515333333334,
+    "max_ns": 95.6524,
+    "messages_per_second": 12571271.777737902
+  },
+  {
+    "engine": "asio",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 1,
+    "median_ns": 644.7115144444444,
+    "min_ns": 639.3908533333333,
+    "max_ns": 654.2119488888889,
+    "messages_per_second": 1551081.34040651
+  },
+  {
+    "engine": "asio",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 4,
+    "median_ns": 978.5524111111112,
+    "min_ns": 972.72155,
+    "max_ns": 1193.0548866666666,
+    "messages_per_second": 1021917.6700658638
+  },
+  {
+    "engine": "asio",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 1,
+    "median_ns": 435.6728888888889,
+    "min_ns": 433.6691466666667,
+    "max_ns": 438.2839866666667,
+    "messages_per_second": 2295300.0416214406
+  },
+  {
+    "engine": "asio",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 4,
+    "median_ns": 448.93712,
+    "min_ns": 436.89962,
+    "max_ns": 455.05812333333336,
+    "messages_per_second": 2227483.439106127
+  },
+  {
+    "engine": "asio",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 1,
+    "median_ns": 139.67214222222222,
+    "min_ns": 138.97614333333334,
+    "max_ns": 141.83590666666666,
+    "messages_per_second": 7159623.845454969
+  },
+  {
+    "engine": "asio",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 4,
+    "median_ns": 395.6724644444445,
+    "min_ns": 328.99725666666666,
+    "max_ns": 486.69332444444444,
+    "messages_per_second": 2527342.9158232664
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "ready",
+    "capacity": 1,
+    "workers": 1,
+    "median_ns": 82.61031333333334,
+    "min_ns": 81.66338,
+    "max_ns": 101.37896,
+    "messages_per_second": 12105026.111751825
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "mixed",
+    "capacity": 1,
+    "workers": 1,
+    "median_ns": 79.66631666666666,
+    "min_ns": 78.81758333333333,
+    "max_ns": 96.66313333333333,
+    "messages_per_second": 12552356.401565783
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 1,
+    "median_ns": 626.8395666666667,
+    "min_ns": 622.5536266666667,
+    "max_ns": 631.4017066666667,
+    "messages_per_second": 1595304.529542833
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "fanin",
+    "capacity": 0,
+    "workers": 4,
+    "median_ns": 979.7082977777778,
+    "min_ns": 973.7167266666667,
+    "max_ns": 1194.378528888889,
+    "messages_per_second": 1020711.9836264006
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 1,
+    "median_ns": 422.16289222222224,
+    "min_ns": 418.78362888888887,
+    "max_ns": 427.39789777777776,
+    "messages_per_second": 2368753.906190339
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "fanin",
+    "capacity": 1,
+    "workers": 4,
+    "median_ns": 415.03011,
+    "min_ns": 413.6691122222222,
+    "max_ns": 513.3099855555555,
+    "messages_per_second": 2409463.7374623255
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 1,
+    "median_ns": 138.01996666666668,
+    "min_ns": 136.57644555555555,
+    "max_ns": 139.11425444444444,
+    "messages_per_second": 7245328.51406282
+  },
+  {
+    "engine": "asio-reuse",
+    "mode": "fanin",
+    "capacity": 64,
+    "workers": 4,
+    "median_ns": 301.4016622222222,
+    "min_ns": 295.37612444444443,
+    "max_ns": 307.4529788888889,
+    "messages_per_second": 3317831.735323026
+  }
+]

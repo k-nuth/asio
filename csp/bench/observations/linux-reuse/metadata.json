@@ -1,0 +1,103 @@
+{
+  "timestamp": "2026-10-24T11:11:47+0200",
+  "platform": "Linux-7.1.5-zen1-x86_64-with-glibc2.42",
+  "machine": "AMD Ryzen 9 9950X3D 16-Core Processor",
+  "cpu_count": 32,
+  "affinity": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "head": "c834f8b7d9db45c9485e4ff40962b89781d9d1cf",
+  "tree": "30b76b4721abc6671763b4c80e6957124a3efa95",
+  "status": "M csp/bench/build.py\n M csp/bench/run.py\n M csp/bench/select.cpp\n M csp/tests/awaitable_path.cpp\n?? csp/._CMakeLists.txt\n?? csp/tests/._ready_path.cpp\n?? include/asio/experimental/._channel_select.hpp",
+  "n": 300000,
+  "repeats": 7,
+  "source_sha256": {
+    "csp/bench/select.cpp": "e134dab2c2d2167961d3ad1d497d08ec1bd909037879ede8e5fc64c7c252546e",
+    "csp/bench/select.go": "96ca7f4878f4b4d6569838527ef79550b1fe3839fa3793a9bf745426aa60c81b",
+    "csp/bench/rust/src/main.rs": "862a1735e8552d663b650729f82640f4c7915dbf695354fee2b63f4e9e2cd3e7",
+    "csp/bench/rust/Cargo.toml": "9115550d6f2710b49f3ef6a420b64ff13d5b4e43d1f7a9a2b62332b770110d1c",
+    "csp/bench/rust/Cargo.lock": "7d7a65fa45849d865b4ce658d621f04561fa8c19cdc355ec1ec1f76bf0899c06",
+    "csp/bench/build.py": "470de972c5af9854345308c4776134116b615405c11541f9ccef629451dff9ae",
+    "csp/bench/run.py": "cde73ad529b17d6ff406fd1168d12dbfe653fc8b40516bd42e79fa22cdf083f9",
+    "include/asio/experimental/channel_select.hpp": "f299765376c3cecca2d5520dac5c7858c8628df3b07b583f39d73f4eba5a3612",
+    "csp/bench/reference/asio/experimental/channel_select.hpp": "1a553194765e1e73513f4584442fd03da12b4d55a932d3bd00c08be70d26e27b"
+  },
+  "build": {
+    "commands": [
+      [
+        "g++",
+        "-std=c++20",
+        "-O3",
+        "-DNDEBUG",
+        "-DASIO_STANDALONE",
+        "-pthread",
+        "-I/tmp/kth-asio-perf.blmoOk/repo/include",
+        "/tmp/kth-asio-perf.blmoOk/repo/csp/bench/select.cpp",
+        "-o",
+        "/tmp/kth-asio-perf.blmoOk/build-reuse/asio-bench"
+      ],
+      [
+        "g++",
+        "-std=c++20",
+        "-O3",
+        "-DNDEBUG",
+        "-DASIO_STANDALONE",
+        "-pthread",
+        "-I/tmp/kth-asio-perf.blmoOk/repo/csp/bench/reference",
+        "-I/tmp/kth-asio-perf.blmoOk/repo/include",
+        "/tmp/kth-asio-perf.blmoOk/repo/csp/bench/select.cpp",
+        "-o",
+        "/tmp/kth-asio-perf.blmoOk/build-reuse/asio-baseline-bench"
+      ],
+      [
+        "g++",
+        "-std=c++20",
+        "-O3",
+        "-DNDEBUG",
+        "-DASIO_STANDALONE",
+        "-pthread",
+        "-DASIO_BENCH_REUSE_CASES",
+        "-I/tmp/kth-asio-perf.blmoOk/repo/include",
+        "/tmp/kth-asio-perf.blmoOk/repo/csp/bench/select.cpp",
+        "-o",
+        "/tmp/kth-asio-perf.blmoOk/build-reuse/asio-reuse-bench"
+      ],
+      [
+        "/tmp/kth-asio-perf.blmoOk/tools/go/bin/go",
+        "build",
+        "-o",
+        "/tmp/kth-asio-perf.blmoOk/build-reuse/go-bench",
+        "/tmp/kth-asio-perf.blmoOk/repo/csp/bench/select.go"
+      ],
+      [
+        "/home/fernando/.cargo/bin/cargo",
+        "build",
+        "--release",
+        "--locked",
+        "--manifest-path",
+        "/tmp/kth-asio-perf.blmoOk/repo/csp/bench/rust/Cargo.toml"
+      ]
+    ],
+    "versions": {
+      "cxx": "g++ (GCC) 16.1.0\nCopyright (C) 2026 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.",
+      "go": "go version go1.27.3 linux/amd64",
+      "cargo": "cargo 1.94.1 (29ea6fb6a 2026-03-24)",
+      "rustc": "rustc 1.94.1 (e408947bf 2026-03-25)"
+    },
+    "source_sha256": {
+      "include/asio/experimental/channel_select.hpp": "f299765376c3cecca2d5520dac5c7858c8628df3b07b583f39d73f4eba5a3612",
+      "csp/bench/reference/asio/experimental/channel_select.hpp": "1a553194765e1e73513f4584442fd03da12b4d55a932d3bd00c08be70d26e27b",
+      "csp/bench/select.cpp": "e134dab2c2d2167961d3ad1d497d08ec1bd909037879ede8e5fc64c7c252546e",
+      "csp/bench/select.go": "96ca7f4878f4b4d6569838527ef79550b1fe3839fa3793a9bf745426aa60c81b",
+      "csp/bench/rust/src/main.rs": "862a1735e8552d663b650729f82640f4c7915dbf695354fee2b63f4e9e2cd3e7",
+      "csp/bench/rust/Cargo.lock": "7d7a65fa45849d865b4ce658d621f04561fa8c19cdc355ec1ec1f76bf0899c06"
+    }
+  },
+  "binary_sha256": {
+    "asio": "c20f818de095a22f4d29812e84826464b7e9046411b1ad6c037dc78b6859e8bd",
+    "asio-reuse": "4931fe079d6fa5af4a3aa9862decd19ba5b3f4b04ed585e3f30893043748fb41"
+  }
+}

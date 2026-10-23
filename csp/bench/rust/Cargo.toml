@@ -1,0 +1,7 @@
+[package]
+name = "select-bench"
+version = "0.1.0"
+edition = "2021"
+[dependencies]
+crossbeam-channel = "=0.5.17"
+tokio = { version = "=1.54.1", features = ["rt", "rt-multi-thread", "sync", "macros"] }
