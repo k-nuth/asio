@@ -172,6 +172,13 @@ public:
     this->attached_thread_->entry_point()->cancellation_state_.slot().clear();
   }
 
+  // The executor of the thread of execution that is resuming this frame, for
+  // use by awaitable_async_op_immediate specialisations while the frame runs.
+  const Executor& executor() const noexcept
+  {
+    return this->attached_thread_->entry_point()->u_.executor_;
+  }
+
   template <typename T>
   auto await_transform(awaitable<T, Executor> a) const
   {
@@ -1007,6 +1014,28 @@ private:
   result_type& result_;
 };
 
+// Opt-in immediate completion for an awaited asynchronous operation.
+//
+// By default an awaited operation is initiated only after the coroutine has
+// suspended, so a completion arriving from another thread cannot race the
+// suspension. An operation type may specialise this trait to complete in the
+// awaiting coroutine's frame, before suspension, when it can do so without
+// initiating anything that could complete concurrently. A specialisation must
+// return false and leave the operation untouched when it cannot complete now;
+// otherwise it stores the completion arguments where @c result refers and
+// returns true, and the operation is never initiated. @c frame is the awaiting
+// awaitable_frame_base, which exposes the coroutine's executor and
+// cancellation state through its await_transform overloads.
+template <typename Op>
+struct awaitable_async_op_immediate
+{
+  template <typename Frame, typename Result>
+  static constexpr bool try_complete(Op&, Frame*, Result&) noexcept
+  {
+    return false;
+  }
+};
+
 template <typename Signature, typename Op, typename Executor>
 class awaitable_async_op
 {
@@ -1031,9 +1060,11 @@ public:
   {
   }
 
-  bool await_ready() const noexcept
+  bool await_ready()
+    noexcept(noexcept(awaitable_async_op_immediate<Op>::try_complete(
+          op_, frame_, result_)))
   {
-    return false;
+    return awaitable_async_op_immediate<Op>::try_complete(op_, frame_, result_);
   }
 
   void await_suspend(coroutine_handle<void>)
