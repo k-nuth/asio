@@ -1,0 +1,110 @@
+name: Channel selection controls
+on:
+  pull_request:
+    branches: ['1.38.3']
+  workflow_dispatch:
+permissions:
+  contents: read
+# Both jobs run in the official docker-library GCC 16.2.0 image (Debian 13
+# "trixie"): GCC is the image's own /usr/local toolchain, Clang comes from
+# apt.llvm.org's release branch 23 for trixie. Each job asserts the compiler
+# version it actually runs, so an image or repository change can never fall
+# back to an older compiler unnoticed.
+jobs:
+  gcc:
+    runs-on: ubuntu-24.04
+    container: gcc:16.2.0
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5, Node 24
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Tools, compiler version and exact baseline
+        run: |
+          apt-get update
+          apt-get install -y --no-install-recommends cmake
+          # The checkout is owned by the runner user while the job runs as root.
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          g++ --version
+          test "$(g++ -dumpfullversion)" = 16.2.0
+          cmake --version
+          python3 --version
+          git fetch --no-tags origin 227bfbc08d151f45fec9313883e6da6b53683396
+      - name: Original completion failure on GCC
+        # GCC's argument evaluation order exposed the reviewed commit's lost
+        # completion executor; Clang evaluates the same expression in the
+        # other order and completes, so this RED control is GCC-specific.
+        run: |
+          mkdir -p /tmp/asio-original/asio/experimental
+          git show 227bfbc08d151f45fec9313883e6da6b53683396:include/asio/experimental/channel_select.hpp > /tmp/asio-original/asio/experimental/channel_select.hpp
+          g++ -std=c++20 -pthread -DASIO_STANDALONE -I/tmp/asio-original -Icsp/tests/fixtures/reference-upstream -Iinclude csp/tests/completion_executor.cpp -o /tmp/asio-original/completion
+          set +e
+          /tmp/asio-original/completion > /tmp/asio-original/result.log 2>&1
+          result=$?
+          set -e
+          cat /tmp/asio-original/result.log
+          test "$result" = 2
+          grep -F 'bad executor' /tmp/asio-original/result.log
+      - name: Current behavioral controls
+        run: |
+          cmake -S csp -B build-csp -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_COMPILER=g++
+          cmake --build build-csp --parallel 4
+          # The retained upstream timer scheduling probe characterizes macOS.
+          ctest --test-dir build-csp --output-on-failure -E upstream_probe
+          CXX=g++ python3 csp/tests/lifetime_control.py /tmp/asio-lifetime-control
+          CXX=g++ python3 csp/tests/mutation_control.py /tmp/asio-mutation-control
+          CXX=g++ python3 csp/tests/performance_control.py /tmp/asio-performance-control
+          CXX=g++ python3 csp/tests/coroutine_tuple_control.py /tmp/asio-coroutine-tuple-control
+          CXX=g++ python3 csp/tests/finalize_withdraw_control.py /tmp/asio-finalize-withdraw-control
+      - name: Preserve negative and positive observations
+        if: always()
+        run: |
+          for file in /tmp/asio-original/result.log /tmp/asio-lifetime-control/baseline.log /tmp/asio-lifetime-control/fixed.log /tmp/asio-mutation-control/mutation*.log /tmp/asio-performance-control/*.log /tmp/asio-coroutine-tuple-control/*.log /tmp/asio-finalize-withdraw-control/*.log; do
+            if test -f "$file"; then cat "$file"; fi
+          done
+  clang:
+    runs-on: ubuntu-24.04
+    container: gcc:16.2.0
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5, Node 24
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Tools, Clang 23 from apt.llvm.org and compiler version
+        # Clang 23 uses the image's default C++ standard library (Debian 13's
+        # libstdc++); the GCC job covers GCC 16.2's own library.
+        run: |
+          apt-get update
+          apt-get install -y --no-install-recommends cmake ca-certificates gnupg wget
+          mkdir -p /etc/apt/keyrings
+          wget -qO- https://apt.llvm.org/llvm-snapshot.gpg.key | gpg --dearmor -o /etc/apt/keyrings/apt.llvm.org.gpg
+          echo 'deb [signed-by=/etc/apt/keyrings/apt.llvm.org.gpg] http://apt.llvm.org/trixie/ llvm-toolchain-trixie-23 main' > /etc/apt/sources.list.d/llvm-23.list
+          apt-get update
+          apt-get install -y --no-install-recommends clang-23
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          clang++-23 --version
+          test "$(clang++-23 -dumpversion | cut -d. -f1)" = 23
+          cmake --version
+          python3 --version
+          git fetch --no-tags origin 227bfbc08d151f45fec9313883e6da6b53683396
+      - name: Current behavioral controls
+        run: |
+          cmake -S csp -B build-csp -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_COMPILER=clang++-23
+          cmake --build build-csp --parallel 4
+          # The retained upstream timer scheduling probe characterizes macOS.
+          ctest --test-dir build-csp --output-on-failure -E upstream_probe
+          CXX=clang++-23 python3 csp/tests/lifetime_control.py /tmp/asio-lifetime-control
+          CXX=clang++-23 python3 csp/tests/mutation_control.py /tmp/asio-mutation-control
+          CXX=clang++-23 python3 csp/tests/performance_control.py /tmp/asio-performance-control
+          CXX=clang++-23 python3 csp/tests/coroutine_tuple_control.py /tmp/asio-coroutine-tuple-control
+          CXX=clang++-23 python3 csp/tests/finalize_withdraw_control.py /tmp/asio-finalize-withdraw-control
+      - name: Preserve negative and positive observations
+        if: always()
+        run: |
+          for file in /tmp/asio-lifetime-control/baseline.log /tmp/asio-lifetime-control/fixed.log /tmp/asio-mutation-control/mutation*.log /tmp/asio-performance-control/*.log /tmp/asio-coroutine-tuple-control/*.log /tmp/asio-finalize-withdraw-control/*.log; do
+            if test -f "$file"; then cat "$file"; fi
+          done
