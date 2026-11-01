@@ -20,3 +20,19 @@ foreach(name arbitration select lifetime completion_executor ready_path pending_
 endforeach()
 add_test(NAME upstream_preservation_red COMMAND upstream_control --require-preservation)
 set_tests_properties(upstream_preservation_red PROPERTIES WILL_FAIL TRUE)
+
+foreach(mode default custom)
+  add_executable(timer_backend_${mode} tests/timer_backend.cpp)
+  target_compile_features(timer_backend_${mode} PRIVATE cxx_std_20)
+  target_compile_definitions(timer_backend_${mode} PRIVATE ASIO_STANDALONE)
+  target_include_directories(timer_backend_${mode} PRIVATE ../include tests)
+  target_link_libraries(timer_backend_${mode} PRIVATE Threads::Threads)
+  target_compile_options(timer_backend_${mode} PRIVATE -Wall -Wextra -Werror -UNDEBUG)
+  if(mode STREQUAL "custom")
+    target_compile_definitions(timer_backend_${mode} PRIVATE
+        ASIO_CHANNEL_SELECT_TIMER_HEADER="timer_probe.hpp"
+        ASIO_CHANNEL_SELECT_TIMER_TYPE=timer_probe::timer)
+  endif()
+  add_test(NAME timer_backend_${mode} COMMAND timer_backend_${mode})
+  set_tests_properties(timer_backend_${mode} PROPERTIES TIMEOUT 10)
+endforeach()

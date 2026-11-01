@@ -44,6 +44,10 @@
 #include <variant>
 #include <vector>
 
+#if defined(ASIO_CHANNEL_SELECT_TIMER_HEADER)
+#include ASIO_CHANNEL_SELECT_TIMER_HEADER
+#endif
+
 namespace asio {
 ASIO_INLINE_NAMESPACE_BEGIN
 namespace experimental {
@@ -56,6 +60,13 @@ struct channel_select_options {
   asio::steady_timer::time_point deadline = asio::steady_timer::time_point::max();
 };
 namespace channel_select_detail {
+#if defined(ASIO_CHANNEL_SELECT_TIMER_TYPE)
+using timer_type = ASIO_CHANNEL_SELECT_TIMER_TYPE;
+static_assert(std::is_same_v<timer_type::clock_type, asio::steady_timer::clock_type>);
+static_assert(std::is_same_v<timer_type::time_point, asio::steady_timer::time_point>);
+#else
+using timer_type = asio::steady_timer;
+#endif
 // A small generator, following the inexpensive Xorshift approach used by
 // Crossbeam. One per worker seeds one per operation, so a selection draws
 // without touching thread-local storage. The explicit-seed path below keeps
@@ -255,7 +266,7 @@ struct operation : std::enable_shared_from_this<operation>, asio::detail::schedu
   asio::detail::scheduler* scheduler; // That executor's scheduler, when owner_io is set.
   std::shared_ptr<operation> runner_ref; // Self-ownership while queued or running as a scheduler operation.
   std::stop_token stop;
-  std::optional<asio::steady_timer> timer;
+  std::optional<timer_type> timer;
   pending_operations* registration_owner; // Resolved at construction, so keeping a registration cannot fail.
   operation* registry_prev = nullptr; // Lifetime registry links; registry mutex only.
   operation* registry_next = nullptr;
@@ -389,7 +400,8 @@ struct operation : std::enable_shared_from_this<operation>, asio::detail::schedu
   }
   // Scheduler entry: run the turns, or at scheduler shutdown only drop the
   // self-reference, which may destroy the operation as the last action.
-  static void run_scheduled(void* owner, asio::detail::scheduler_operation* base, const asio::error_code&, std::size_t) {
+  template<class SchedulerError>
+  static void run_scheduled(void* owner, asio::detail::scheduler_operation* base, SchedulerError, std::size_t) {
     auto* self = static_cast<operation*>(base);
     auto keep = std::move(self->runner_ref);
     if (owner) self->run_turns();

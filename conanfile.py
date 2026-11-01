@@ -5,7 +5,7 @@ import os
 
 class AsioCsp(ConanFile):
     name = "asio"
-    version = "1.38.3-kth.1"
+    version = "1.38.3-kth.2"
     license = "BSL-1.0"
     url = "https://github.com/k-nuth/asio"
     description = "Standalone Asio with experimental independent heterogeneous channel selection"

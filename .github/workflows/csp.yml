@@ -1,7 +1,9 @@
 name: Channel selection controls
 on:
   pull_request:
-    branches: ['1.38.3']
+    branches: ['master', '1.38.3']
+  push:
+    branches: ['master']
   workflow_dispatch:
 permissions:
   contents: read
@@ -32,7 +34,12 @@ jobs:
           cmake --version
           python3 --version
           git fetch --no-tags origin 227bfbc08d151f45fec9313883e6da6b53683396
+          # Frozen negative controls need their original upstream scheduler ABI.
+          # Run them with that exact base, but use today's selection header for GREEN.
+          git worktree add --detach /tmp/asio-historical 4b04892f2d02d5c9e04b79b428d8fe905a927a48
+          cp include/asio/experimental/channel_select.hpp /tmp/asio-historical/include/asio/experimental/channel_select.hpp
       - name: Original completion failure on GCC
+        working-directory: /tmp/asio-historical
         # GCC's argument evaluation order exposed the reviewed commit's lost
         # completion executor; Clang evaluates the same expression in the
         # other order and completes, so this RED control is GCC-specific.
@@ -53,11 +60,11 @@ jobs:
           cmake --build build-csp --parallel 4
           # The retained upstream timer scheduling probe characterizes macOS.
           ctest --test-dir build-csp --output-on-failure -E upstream_probe
-          CXX=g++ python3 csp/tests/lifetime_control.py /tmp/asio-lifetime-control
-          CXX=g++ python3 csp/tests/mutation_control.py /tmp/asio-mutation-control
-          CXX=g++ python3 csp/tests/performance_control.py /tmp/asio-performance-control
-          CXX=g++ python3 csp/tests/coroutine_tuple_control.py /tmp/asio-coroutine-tuple-control
-          CXX=g++ python3 csp/tests/finalize_withdraw_control.py /tmp/asio-finalize-withdraw-control
+          CXX=g++ python3 /tmp/asio-historical/csp/tests/lifetime_control.py /tmp/asio-lifetime-control
+          CXX=g++ python3 /tmp/asio-historical/csp/tests/mutation_control.py /tmp/asio-mutation-control
+          CXX=g++ python3 /tmp/asio-historical/csp/tests/performance_control.py /tmp/asio-performance-control
+          CXX=g++ python3 /tmp/asio-historical/csp/tests/coroutine_tuple_control.py /tmp/asio-coroutine-tuple-control
+          CXX=g++ python3 /tmp/asio-historical/csp/tests/finalize_withdraw_control.py /tmp/asio-finalize-withdraw-control
       - name: Preserve negative and positive observations
         if: always()
         run: |
@@ -91,17 +98,21 @@ jobs:
           cmake --version
           python3 --version
           git fetch --no-tags origin 227bfbc08d151f45fec9313883e6da6b53683396
+          # Frozen negative controls need their original upstream scheduler ABI.
+          # Run them with that exact base, but use today's selection header for GREEN.
+          git worktree add --detach /tmp/asio-historical 4b04892f2d02d5c9e04b79b428d8fe905a927a48
+          cp include/asio/experimental/channel_select.hpp /tmp/asio-historical/include/asio/experimental/channel_select.hpp
       - name: Current behavioral controls
         run: |
           cmake -S csp -B build-csp -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_COMPILER=clang++-23
           cmake --build build-csp --parallel 4
           # The retained upstream timer scheduling probe characterizes macOS.
           ctest --test-dir build-csp --output-on-failure -E upstream_probe
-          CXX=clang++-23 python3 csp/tests/lifetime_control.py /tmp/asio-lifetime-control
-          CXX=clang++-23 python3 csp/tests/mutation_control.py /tmp/asio-mutation-control
-          CXX=clang++-23 python3 csp/tests/performance_control.py /tmp/asio-performance-control
-          CXX=clang++-23 python3 csp/tests/coroutine_tuple_control.py /tmp/asio-coroutine-tuple-control
-          CXX=clang++-23 python3 csp/tests/finalize_withdraw_control.py /tmp/asio-finalize-withdraw-control
+          CXX=clang++-23 python3 /tmp/asio-historical/csp/tests/lifetime_control.py /tmp/asio-lifetime-control
+          CXX=clang++-23 python3 /tmp/asio-historical/csp/tests/mutation_control.py /tmp/asio-mutation-control
+          CXX=clang++-23 python3 /tmp/asio-historical/csp/tests/performance_control.py /tmp/asio-performance-control
+          CXX=clang++-23 python3 /tmp/asio-historical/csp/tests/coroutine_tuple_control.py /tmp/asio-coroutine-tuple-control
+          CXX=clang++-23 python3 /tmp/asio-historical/csp/tests/finalize_withdraw_control.py /tmp/asio-finalize-withdraw-control
       - name: Preserve negative and positive observations
         if: always()
         run: |

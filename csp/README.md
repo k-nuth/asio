@@ -485,3 +485,28 @@ Use named tuple storage for that pattern (`auto completion = co_await ...;
 auto& [ec, result] = completion;`). The retained compiler-only control and full
 LeakSanitizer evidence distinguish this toolchain finding from the primitive; see
 the benchmark repository. No diagnostic is suppressed.
+
+## Configurable timer backend
+
+`asio/1.38.3-kth.2` defaults to `asio::steady_timer`, preserving ordinary
+selection behavior. Platforms with another event loop may define
+`ASIO_CHANNEL_SELECT_TIMER_TYPE` to a fully qualified timer type and optionally
+`ASIO_CHANNEL_SELECT_TIMER_HEADER` to its quoted include path. Use the same
+configuration in every translation unit to preserve the selection types' ODR.
+The package does not depend on any application or browser runtime.
+
+The timer must accept an `asio::any_io_executor`, use the same steady clock and
+time point as `asio::steady_timer`, and provide `expires_at`, `async_wait`, and
+`cancel`. Completion and cancellation must execute on the supplied owner's
+executor. Destruction must safely cancel pending work. It must retain an
+outstanding wait until completion, preserve the handler's executor/cancellation
+contract and allow forward progress without blocking the platform event loop.
+The hook changes only the operation's internal timer; selection deadlines,
+arbitration, losing-branch ownership and cancellation semantics are unchanged.
+
+The `timer_backend_default` and `timer_backend_custom` controls check expiry,
+cancellation and actual use of the configured backend. The normal behavioral
+suite tests current master headers. Historical defect controls additionally use
+their frozen upstream base to preserve their scheduler ABI; their GREEN run
+uses the current selection header against that base. The scheduler adapter
+accepts both the old error-code argument and master's integer error argument.
